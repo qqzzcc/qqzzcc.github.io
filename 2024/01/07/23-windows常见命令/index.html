@@ -1,0 +1,402 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>23.windows常见命令学习 | 亙壬的小站</title><meta name="author" content="亙壬"><meta name="copyright" content="亙壬"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="23.windows常见命令学习"><meta name="application-name" content="23.windows常见命令学习"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="23.windows常见命令学习"><meta property="og:url" content="http://example.com/2024/01/07/23-windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/index.html"><meta property="og:site_name" content="亙壬的小站"><meta property="og:description" content="1.cmd是什么？CMD，全称 Command Prompt，是一种命令行界面，常见于Windows操作系统中。它提供了一个用户可以通过键入文本命令来与计算机进行交互的界面。通过CMD，用户可以执行各种系统命令和程序，进行文件和文件夹管理，以及进行系统设置等操作。CMD提供了一种比图形化界面更直接、"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="http://example.com/img/default_cover.jpg"><meta property="article:author" content="亙壬"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/img/default_cover.jpg"><meta name="description" content="1.cmd是什么？CMD，全称 Command Prompt，是一种命令行界面，常见于Windows操作系统中。它提供了一个用户可以通过键入文本命令来与计算机进行交互的界面。通过CMD，用户可以执行各种系统命令和程序，进行文件和文件夹管理，以及进行系统设置等操作。CMD提供了一种比图形化界面更直接、"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2024/01/07/23-windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: {"enable":true,"title":"与数百名博主无限进步","addFriendPlaceholder":"昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"},
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"勿忘我！","backTitle":"欢迎！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 亙壬","link":"链接: ","source":"来源: 亙壬的小站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '亙壬的小站',
+  title: '23.windows常见命令学习',
+  postAI: '',
+  pageFillDescription: '1.cmd是什么？, 2.CMD基本命令：, 3.windows命令行命令：是什么全称是一种命令行界面常见于操作系统中它提供了一个用户可以通过键入文本命令来与计算机进行交互的界面通过用户可以执行各种系统命令和程序进行文件和文件夹管理以及进行系统设置等操作提供了一种比图形化界面更直接更灵活的方式来操作计算机和执行任务基本命令组策略本地服务设置打开资源管理器组策略录音机没有这个本机用户和组本地服务设置打开记事本垃圾整理开始信使服务打不开这个服务打开计算机管理播放器启动字符映射表磁盘管理实用程序启动计算器设备管理器检查信息诊断工具诊断工具也称为是操作系统中的实用工具用于诊断和检查计算机的相关信息它可以帮助用户了解计算机的图形音频和输入设备等相关信息包括版本驱动程序显卡信息音频设备信息等可以通过来检查的版本和功能查看显卡和声卡信息甚至进行一些简单的性能测试和故障排除工具通常用于检查计算机的图形和音频能力以及解决与相关的问题注册表编辑器系统配置实用程序组策略结果集注册表等等命令行命令进入盘进入盘获取使用帮助跳转到硬盘的根目录跳转到当前硬盘的其他文件跳转到其他硬盘跳转到其他硬盘的其他文件夹注意此处必须加参数否则无法跳转跳转到上一层目录显示当前目录中的文件和文件夹列表用法目录路径示例显示目录下的文件和文件夹列表更改当前目录用法目录路径示例切换到目录在命令行中执行命令会将当前目录切换到指定的驱动器当你执行这个命令后命令行窗口的提示符会从原来的路径更改为新驱动器的根目录符号在命令行中通常用作路径分隔符用于指示目录层级关系所以当你在命令行中看到实际上是在表示驱动器的根目录这是因为在命令行中使用来表示路径分隔符因此即使你在命令行中输入的命令是但显示的结果是这只是命令行窗口中显示路径分隔符的方式不同实际上已经成功切换到了驱动器的根目录如果你继续输入命令或执行其他操作将会在驱动器的根目录进行只能创建新的文件夹用法新文件夹名示例在当前目录下创建新的文件夹删除空文件夹用法要删除的文件夹名示例删除当前目录下的文件夹在目录下创建一个名为的文本文件文本内容文件名用法文件名示例结果这条命令将在中搜索包含文本的行复制文件或文件夹新建文件夹新建用法源文件路径目标文件路径示例将复制到复制文件和文件夹并可以选择性地包括子目录和文件用法源路径目标路径示例将中的内容复制到结果每个文件的复制过程包括源文件的名称和目标文件的名称被复制的文件数量以及复制成功的数量如果有文件未能被复制它还会显示有关这些文件的信息比如文件不存在或者访问权限不足等删除文件用法文件名示例删除当前目录下的文件重命名文件或文件夹用法原文件名新文件名示例将文件名改为移动文件或文件夹到另一个位置用法源路径目标路径示例将文件移动到显示文件内容用法文件名示例显示文件的内容显示或更改文件的属性用法属性文件名示例将设置为只读属性清空命令行窗口用法示例在命令提示符下直接输入清空当前窗口内容显示正在运行的进程列表用法示例在命令提示符下直接输入显示当前正在运行的进程列表终止进程用法进程名参数用于指定要终止的进程的映像名称映像名称是指运行的可执行文件的名称通常是带有扩展名的文件名示例强制关闭名为的进程显示计算机的网络连接配置信息包括地址子网掩码默认网关等用法示例在命令提示符下直接输入显示当前网络适配器的配置信息向指定的地址发送回显请求以测试网络连接用法目标地址示例向发送请求跟踪数据包在网络上的路由路径用法目标地址示例跟踪访问的网络路由路径当执行命令时它会在计算机和目标主机之间的路由上发送一系列的网络探测包报文以测量数据包到达目标主机所经过的中间节点的时间如果在路由跟踪过程中某个节点上的数据包超过一定的时间限制默认为秒则会显示超时超时可能有多种原因包括网络拥堵丢包路由过程中的延迟以及某个节点对报文的阻止等当遇到超时时这意味着在该节点上可能存在网络问题或延迟或者该节点丢弃了报文超时并不一定表示有问题尤其是在跨越国际边界或通过公共互联网时超时是比较常见的如果在结果中只有一两个节点显示超时而后续节点显示正常那么可能是在路由路径上的某个特定节点上出现了临时问题但是如果多个节点显示超时或者超时延迟很高并持续出现在整个路由跟踪过程中那么可能存在网络连接或路由配置的问题显示当前处于活动状态的网络连接帮助命令用法示例显示当前计算机的所有活动连接会显示正在使用连接的可执行程序的名称会以数字格式显示地址和端口号会显示与每个连接关联的进程的标识符检查磁盘的文件系统错误并修复用法驱动器盘符示例检查并修复盘文件系统错误没有权限格式化磁盘用法驱动器盘符文件系统类型示例格式化盘为文件系统示例结果这条命令将立即关闭计算机不发送警告不显示详细信息关闭计算机这将立即关闭计算机用户将被注销重新启动计算机这会导致计算机立即重新启动指定关机或重启前的等待时间以秒为单位其中表示等待的秒数例如表示在执行关机或重启操作前等待秒指定关机或重启时的注释信息可以添加一条注释以便其他用户了解关机或重启的原因强制关闭应用程序这将强制关闭当前正在运行的应用程序而不经过提示在支持的计算机上将系统休眠用在和选项一起将系统关闭而不需要用户登录这条命令将列出系统的详细信息如操作系统版本安装日期可用的物理内存等用法命令示例结果这条命令将显示本地用户账户的信息用法扩展名示例结果这条命令将显示文件扩展名关联的程序如果命令行输出为则表示文件扩展名被关联到这个文件类型默认情况下将文件关联到可执行程序用法示例结果这条命令将显示当前系统中安装的驱动程序列表是操作系统的命令行工具用于管理计划任务计划任务是在指定的时间或事件触发时自动执行的操作脚本或程序用法参数示例列出系统中当前存在的所有计划任务并显示它们的名称计划时间状态等信息列出当前系统中的所有计划任务创建新的计划任务表示创建一个新的计划任务指定了任务的名称为指定了任务要运行的程序或脚本的路径指定了任务的触发类型为每天日程安排指定了任务的开始时间为早上点删除指定的计划任务用法立即运行指定的计划任务用法停止正在运行的指定计划任务用法修改指定的计划任务配置用法启用指定的计划任务用法禁用指定的计划任务用法按照计划时间查询计划任务用法指定要操作的计划任务的名称用法指定计划任务要运行的用户用法指定计划任务要运行的用户的密码用法',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-07 21:48:32',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20210227105240_e3f66.jpeg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="安知鱼博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="安知鱼博客"/><span class="back-menu-item-text">安知鱼博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">亙壬的小站</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 目录</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190733.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190733.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190633.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190633.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/GitHub/" style="font-size: 1.05rem;">GitHub<sup>4</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>3</sup></a><a href="/tags/centos/" style="font-size: 1.05rem;">centos<sup>2</sup></a><a href="/tags/java/" style="font-size: 1.05rem;">java<sup>1</sup></a><a href="/tags/python/" style="font-size: 1.05rem;">python<sup>2</sup></a><a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="font-size: 1.05rem;">环境配置<sup>2</sup></a><a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 1.05rem;">网络<sup>3</sup></a><a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 1.05rem;">语法<sup>1</sup></a><a href="/tags/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/" style="font-size: 1.05rem;">远程控制<sup>2</sup></a><a href="/tags/%E9%92%93%E9%B1%BC/" style="font-size: 1.05rem;">钓鱼<sup>2</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">14</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">31</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">9</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">23.windows常见命令学习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2024-01-07T07:26:49.000Z" title="发表于 2024-01-07 15:26:49">2024-01-07</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-01-07T13:48:32.828Z" title="更新于 2024-01-07 21:48:32">2024-01-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/img/default_cover.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2024/01/07/23-windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/"><header><h1 id="CrawlerTitle" itemprop="name headline">23.windows常见命令学习</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">亙壬</span><time itemprop="dateCreated datePublished" datetime="2024-01-07T07:26:49.000Z" title="发表于 2024-01-07 15:26:49">2024-01-07</time><time itemprop="dateCreated datePublished" datetime="2024-01-07T13:48:32.828Z" title="更新于 2024-01-07 21:48:32">2024-01-07</time></header><h1 id="1-cmd是什么？"><a href="#1-cmd是什么？" class="headerlink" title="1.cmd是什么？"></a>1.cmd是什么？</h1><p>CMD，全称 Command Prompt，是一种命令行界面，常见于Windows操作系统中。它提供了一个用户可以通过键入文本命令来与计算机进行交互的界面。通过CMD，用户可以执行各种系统命令和程序，进行文件和文件夹管理，以及进行系统设置等操作。CMD提供了一种比图形化界面更直接、更灵活的方式来操作计算机和执行任务。</p>
+<h1 id="2-CMD基本命令："><a href="#2-CMD基本命令：" class="headerlink" title="2.CMD基本命令："></a>2.CMD基本命令：</h1><p>gpedit.msc—–组策略<br>services.msc—本地服务设置<br>explorer——-打开资源管理器<br>gpedit.msc—–组策略<br>sndrec32——-录音机#windows11没有这个<br>lusrmgr.msc—-本机用户和组<br>services.msc—本地服务设置<br>notepad——–打开记事本<br>cleanmgr——-垃圾整理<br>net start messenger—-开始信使服务#window11打不开这个服务<br>compmgmt.msc—打开1计算机管理<br>dvdplay——–DVD播放器<br>charmap——–启动字符映射表<br>diskmgmt.msc—磁盘管理实用程序<br>calc———–启动计算器<br>devmgmt.msc— 设备管理器<br>dxdiag———检查DirectX信息，诊断工具<br>DirectX诊断工具（也称为DXDiag）是Windows操作系统中的实用工具，用于诊断和检查计算机的DirectX相关信息。它可以帮助用户了解计算机的图形、音频和输入设备等DirectX相关信息，包括DirectX版本、驱动程序、显卡信息、音频设备信息等。可以通过DXDiag来检查DirectX的版本和功能，查看显卡和声卡信息，甚至进行一些简单的性能测试和故障排除。DXDiag工具通常用于检查计算机的图形和音频能力，以及解决与DirectX相关的问题。<br>regedt32——-注册表编辑器<br>Msconfig.exe—系统配置实用程序<br>rsop.msc——-组策略结果集<br>regedit.exe-—注册表等等</p>
+<h1 id="3-windows命令行命令："><a href="#3-windows命令行命令：" class="headerlink" title="3.windows命令行命令："></a>3.windows命令行命令：</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//进入d盘</span><br><span class="line">D:</span><br><span class="line">//进入F盘</span><br><span class="line">F:</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cd /?     //获取使用帮助</span><br><span class="line">cd \       //跳转到硬盘的根目录</span><br><span class="line">cd C:\WINDOWS  //跳转到当前硬盘的其他文件</span><br><span class="line">d:        //跳转到其他硬盘</span><br><span class="line">cd /d e:\software    //跳转到其他硬盘的其他文件夹，注意此处必须加/d参数。否则无法跳转。</span><br><span class="line">cd..      //跳转到上一层目录</span><br></pre></td></tr></table></figure>
+<p>1.dir：<br>显示当前目录中的文件和文件夹列表。<br>用法：dir [目录路径]<br>示例：dir C:\Users，显示 Users 目录下的文件和文件夹列表。<br>2.cd：更改当前目录。<br>用法：cd [目录路径]<br>示例：cd C:\Windows\System32，切换到 System32 目录。<br>cd G：<br>G&#x2F;<br>在 Windows 命令行中，执行 <code>cd G:</code> 命令会将当前目录切换到指定的驱动器。当你执行这个命令后，命令行窗口的提示符会从原来的路径更改为新驱动器的根目录。<br>‘&#x2F;‘ 符号在命令行中通常用作路径分隔符，用于指示目录层级关系。所以，当你在 Windows 命令行中看到 <code>G/</code>，实际上是在表示 G 驱动器的根目录。这是因为在 Windows 命令行中，使用 forward slash (&#x2F;) 来表示路径分隔符。<br>因此，即使你在命令行中输入的命令是 <code>cd G: </code>，但显示的结果是 <code>G/</code>，这只是命令行窗口中显示路径分隔符的方式不同，实际上已经成功切换到了 G 驱动器的根目录。如果你继续输入命令或执行其他操作，将会在 G 驱动器的根目录进行<br>3.md：只能创建新的文件夹。<br>用法：md [新文件夹名]<br>示例：md asd，在当前目录下创建新的文件夹 asd。<br>4.rd：删除空文件夹。<br>用法：rd [要删除的文件夹名]<br>示例：rd asd，删除当前目录下的文件夹 asd。</p>
+<p>rd &#x2F;s &#x2F;q </p>
+<p>md asd1<br>5.在 “G:\asd1” 目录下创建一个名为 “1.txt” 的文本文件：<br><strong>echo. &gt; “G:\asd1\1.txt”</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo 文本内容 &gt; 文件名.txt</span><br></pre></td></tr></table></figure>
+<p>find：<br>用法：find “12” 文件名<br>示例：find “12” 1.txt<br>结果：这条命令将在 test.txt 中搜索包含 “12” 文本的行。<br>5.copy：复制文件或文件夹。<br>新建文件夹file<br>新建2.txt<br>echo. “G:\2.txt”<br>用法：copy [源文件路径] [目标文件路径]<br>示例：copy G:2.txt G:\file，将 2.txt 复制到 G:\file。<br>6.xcopy：复制文件和文件夹，并可以选择性地包括子目录和文件。<br>用法：xcopy [源路径] [目标路径] &#x2F;s<br>示例：xcopy C:\Source D:\Destination &#x2F;s，将 C:\Source 中的内容复制到 D:\Destination。<br>结果：<br>每个文件的复制过程，包括源文件的名称和目标文件的名称。<br>被复制的文件数量以及复制成功的数量。<br>如果有文件未能被复制，它还会显示有关这些文件的信息，比如文件不存在或者访问权限不足等。<br>7.del：删除文件。<br>用法：del [文件名]<br>示例：del 1.txt，删除当前目录下的 1.txt 文件。<br>8.ren：重命名文件或文件夹。<br>用法：ren [原文件名] [新文件名]<br>示例：ren file file1，将文件名 file 改为 file1。<br>echo. &gt;”G:\3.txt”<br>9.move：移动文件或文件夹到另一个位置。<br>用法：move [源路径] [目标路径]<br>示例：move 3.txt G:\file1，将文件 3.txt 移动到G:\file1 。<br>echo. &gt;”G:\4.txt”<br>10.type：显示文件内容。<br>用法：type [文件名]<br>示例：type 4.txt，显示 4.txt 文件的内容。<br>11.attrib：显示或更改文件的属性。<br>用法：attrib [+&#x2F;-][属性] [文件名]<br>示例：attrib +r 4.txt，将4.txt 设置为只读属性。<br>12.cls：清空命令行窗口。<br>用法：cls<br>示例：在命令提示符下直接输入 cls，清空当前窗口内容。<br>13.tasklist：显示正在运行的进程列表。<br>用法：tasklist<br>示例：在命令提示符下直接输入 tasklist，显示当前正在运行的进程列表。<br>14.taskkill：终止进程。<br>用法：taskkill &#x2F;F &#x2F;IM [进程名]#&#x2F;IM 参数用于指定要终止的进程的映像名称。映像名称是指运行的可执行文件的名称，通常是带有扩展名的文件名。<br>示例：taskkill &#x2F;F &#x2F;IM baidunetdisk.exe，强制关闭名为baidunetdisk.exe 的进程。<br>15.ipconfig：显示计算机的网络连接配置信息，包括 IP 地址、子网掩码、默认网关等。<br>用法：ipconfig<br>示例：在命令提示符下直接输入 ipconfig，显示当前网络适配器的 IP 配置信息。<br>16.ping：向指定的 IP 地址发送 ICMP 回显请求以测试网络连接。<br>用法：ping [目标地址]<br>示例：ping <a target="_blank" rel="noopener" href="http://www.baidu.com,向/">www.baidu.com，向</a> <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 发送 ICMP 请求。<br>17.tracert：跟踪数据包在网络上的路由路径。<br>用法：tracert [目标地址]<br>示例：tracert <a target="_blank" rel="noopener" href="http://www.baidu.com,跟踪访问/">www.baidu.com，跟踪访问</a> <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a> 的网络路由路径。<br>当执行”tracert”命令时，它会在计算机和目标主机之间的路由上发送一系列的网络探测包（ICMP报文），以测量数据包到达目标主机所经过的中间节点的时间。如果在路由跟踪过程中某个节点上的数据包超过一定的时间限制（默认为1秒），则会显示”超时”。<br>“超时”可能有多种原因，包括网络拥堵、丢包、路由过程中的延迟以及某个节点对ICMP报文的阻止等。当遇到超时时，这意味着在该节点上可能存在网络问题或延迟，或者该节点丢弃了ICMP报文。超时并不一定表示有问题，尤其是在跨越国际边界或通过公共互联网时，超时是比较常见的。<br>如果在”tracert”结果中只有一两个节点显示超时，而后续节点显示正常，那么可能是在路由路径上的某个特定节点上出现了临时问题。但是，如果多个节点显示超时，或者超时延迟很高，并持续出现在整个路由跟踪过程中，那么可能存在网络连接或路由配置的问题。<br>18.netstat：显示当前处于活动状态的网络连接。<br>netstat -h:帮助命令<br>用法：netstat [-a] [-b] [-n] [-o]<br>示例：netstat -a，显示当前计算机的所有活动连接。<br>netstat -b 会显示正在使用连接的可执行程序的名称。<br>netstat -n 会以数字格式显示地址和端口号。<br>netstat -o 会显示与每个连接关联的进程的标识符。<br>19.chkdsk：检查磁盘的文件系统错误并修复。<br>用法：chkdsk [驱动器盘符] &#x2F;f<br>示例：chkdsk C: &#x2F;f，检查并修复 C 盘文件系统错误。#没有权限<br>20.format：格式化磁盘。<br>用法：format [驱动器盘符]: &#x2F;FS:文件系统类型<br>示例：format D: &#x2F;FS:NTFS，格式化 D 盘为 NTFS 文件系统。</p>
+<p>21.shutdown [&#x2F;s][&#x2F;r][&#x2F;t xx][&#x2F;c “comment”][&#x2F;f][&#x2F;h][&#x2F;p]<br>示例：shutdown &#x2F;s &#x2F;t 0<br>结果：这条命令将立即关闭计算机(&#x2F;s)，不发送警告(&#x2F;f)，不显示详细信息(&#x2F;c “comment”)。</p>
+<ul>
+<li>&#x2F;s：关闭计算机。这将立即关闭计算机，用户将被注销。</li>
+<li>&#x2F;r：重新启动计算机。这会导致计算机立即重新启动。</li>
+<li>&#x2F;t xx：指定关机或重启前的等待时间（以秒为单位），其中 xx 表示等待的秒数。例如，&#x2F;t 60 表示在执行关机或重启操作前等待 60 秒。</li>
+<li>&#x2F;c “comment”：指定关机或重启时的注释信息。可以添加一条注释，以便其他用户了解关机或重启的原因。</li>
+<li>&#x2F;f：强制关闭应用程序。这将强制关闭当前正在运行的应用程序而不经过提示。</li>
+<li>&#x2F;h：在支持的计算机上，将系统休眠（Hibernate）。</li>
+<li>&#x2F;p：用在和 &#x2F;s 选项一起，将系统关闭而不需要用户登录。</li>
+</ul>
+<p>22.systeminfo：这条命令将列出系统的详细信息，如操作系统版本、安装日期、可用的物理内存等<br>23.net：<br>用法：net [命令]<br>示例：net user<br>结果：这条命令将显示本地用户账户的信息。</p>
+<p>24.assoc：<br>用法：assoc [.扩展名]<br>示例：assoc .exe<br>结果：这条命令将显示 .exe 文件扩展名关联的程序。<br>如果命令行输出为 “.exe&#x3D;exefile”，则表示 .exe 文件扩展名被关联到 “exefile” 这个文件类型。默认情况下，Windows 将 .exe 文件关联到可执行程序。<br>25.driverquery：<br>用法：driverquery<br>示例：driverquery<br>结果：这条命令将显示当前系统中安装的驱动程序列表。<br>26.schtasks：<br>schtasks 是 Windows 操作系统的命令行工具，用于管理计划任务（Scheduled Tasks）。计划任务是在指定的时间或事件触发时自动执行的操作、脚本或程序。<br>用法：schtasks [参数]<br>示例：schtasks &#x2F;query#列出系统中当前存在的所有计划任务，并显示它们的名称、计划时间、状态等信息<br>&#x2F;query：列出当前系统中的所有计划任务。<br>&#x2F;create：创建新的计划任务。<br><strong>schtasks &#x2F;create &#x2F;tn DailyScript &#x2F;tr C:\Scripts\run_daily_script.bat &#x2F;sc daily &#x2F;st 08:00</strong></p>
+<ul>
+<li>&#x2F;create 表示创建一个新的计划任务。</li>
+<li>&#x2F;tn DailyScript 指定了任务的名称为 “DailyScript”。#TaskName</li>
+<li>&#x2F;tr C:\Scripts\run_daily_script.bat 指定了任务要运行的程序或脚本的路径。</li>
+<li>&#x2F;sc daily 指定了任务的触发类型为每天。#Schedule日程安排</li>
+<li>&#x2F;st 08:00 指定了任务的开始时间为早上 8 点。</li>
+</ul>
+<p>&#x2F;delete：删除指定的计划任务。<br>用法：schtasks &#x2F;delete &#x2F;tn TaskName<br>&#x2F;run：立即运行指定的计划任务。<br>用法：schtasks &#x2F;run &#x2F;tn TaskName<br>&#x2F;end：停止正在运行的指定计划任务。<br>用法：schtasks &#x2F;end &#x2F;tn TaskName<br>&#x2F;change：修改指定的计划任务配置。<br>用法：schtasks &#x2F;change &#x2F;tn TaskName [options]<br>&#x2F;enable：启用指定的计划任务。<br>用法：schtasks &#x2F;enable &#x2F;tn TaskName<br>&#x2F;disable：禁用指定的计划任务。<br>用法：schtasks &#x2F;disable &#x2F;tn TaskName<br>&#x2F;queryschedules：按照计划时间查询计划任务。<br>用法：schtasks &#x2F;queryschedules &#x2F;tn TaskName<br>&#x2F;tn：指定要操作的计划任务的名称。<br>用法：schtasks &#x2F;command &#x2F;tn TaskName<br>&#x2F;ru：指定计划任务要运行的用户。<br>用法：schtasks &#x2F;create &#x2F;ru Username &#x2F;tn TaskName<br>&#x2F;rp：指定计划任务要运行的用户的密码。<br>用法：schtasks &#x2F;create &#x2F;rp Password &#x2F;tn TaskName</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/avatar.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/avatar.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">亙壬</div><div class="post-copyright__author_desc">邱章程</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2024/01/07/23-windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2024/01/07/23-windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/')">23.windows常见命令学习</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190733.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190733.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190633.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190633.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2024/01/07/23-windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=23.windows常见命令学习&amp;url=http://example.com/2024/01/07/23-windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/&amp;pic=/img/default_cover.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">亙壬的小站</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="/img/default_cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-full"><a href="/2024/01/04/21-MONEYBOX%E5%AD%A6%E4%B9%A0/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">21.vulnhub-MONEYBOX1学习</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about"><h1 class="author-info__name">亙壬</h1><div class="author-info__desc">邱章程</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/dashboard" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/644240914/" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来看我的博客鸭~</div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/thumb1625855025341.jpg) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/1631726478133.jpg) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-cmd%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-number">1.</span> <span class="toc-text">1.cmd是什么？</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-CMD%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">2.CMD基本命令：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-windows%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%91%BD%E4%BB%A4%EF%BC%9A"><span class="toc-number">3.</span> <span class="toc-text">3.windows命令行命令：</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/01/07/23-windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" title="23.windows常见命令学习"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="23.windows常见命令学习"/></a><div class="content"><a class="title" href="/2024/01/07/23-windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" title="23.windows常见命令学习">23.windows常见命令学习</a><time datetime="2024-01-07T07:26:49.000Z" title="发表于 2024-01-07 15:26:49">2024-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/04/21-MONEYBOX%E5%AD%A6%E4%B9%A0/" title="21.vulnhub-MONEYBOX1学习"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="21.vulnhub-MONEYBOX1学习"/></a><div class="content"><a class="title" href="/2024/01/04/21-MONEYBOX%E5%AD%A6%E4%B9%A0/" title="21.vulnhub-MONEYBOX1学习">21.vulnhub-MONEYBOX1学习</a><time datetime="2024-01-04T09:15:53.000Z" title="发表于 2024-01-04 17:15:53">2024-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/04/20-oracle%20mv%20virtualbox/" title="20.oracle mv virtualbox"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="20.oracle mv virtualbox"/></a><div class="content"><a class="title" href="/2024/01/04/20-oracle%20mv%20virtualbox/" title="20.oracle mv virtualbox">20.oracle mv virtualbox</a><time datetime="2024-01-04T06:07:10.000Z" title="发表于 2024-01-04 14:07:10">2024-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/04/19-pikachu/" title="19.Pikachu"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="19.Pikachu"/></a><div class="content"><a class="title" href="/2024/01/04/19-pikachu/" title="19.Pikachu">19.Pikachu</a><time datetime="2024-01-04T02:27:10.000Z" title="发表于 2024-01-04 10:27:10">2024-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/02/17-4%E9%9D%B6%E6%9C%BAtest/" title="17.4 靶机test"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="17.4 靶机test"/></a><div class="content"><a class="title" href="/2024/01/02/17-4%E9%9D%B6%E6%9C%BAtest/" title="17.4 靶机test">17.4 靶机test</a><time datetime="2024-01-02T07:29:49.000Z" title="发表于 2024-01-02 15:29:49">2024-01-02</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="亙壬" target="_blank">亙壬</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="安知鱼博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="安知鱼博客"/><span class="back-menu-item-text">安知鱼博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 目录</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/GitHub/" style="font-size: 0.88rem;">GitHub<sup>4</sup></a><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>3</sup></a><a href="/tags/centos/" style="font-size: 0.88rem;">centos<sup>2</sup></a><a href="/tags/java/" style="font-size: 0.88rem;">java<sup>1</sup></a><a href="/tags/python/" style="font-size: 0.88rem;">python<sup>2</sup></a><a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="font-size: 0.88rem;">环境配置<sup>2</sup></a><a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 0.88rem;">网络<sup>3</sup></a><a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 0.88rem;">语法<sup>1</sup></a><a href="/tags/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/" style="font-size: 0.88rem;">远程控制<sup>2</sup></a><a href="/tags/%E9%92%93%E9%B1%BC/" style="font-size: 0.88rem;">钓鱼<sup>2</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.4/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.10",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 亙壬 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "visitor@anheyu.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>

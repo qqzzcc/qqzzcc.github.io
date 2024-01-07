@@ -1,0 +1,561 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>3.2 JavaScript从入门到精通 | 亙壬的小站</title><meta name="author" content="亙壬"><meta name="copyright" content="亙壬"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="3.2 JavaScript从入门到精通"><meta name="application-name" content="3.2 JavaScript从入门到精通"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="3.2 JavaScript从入门到精通"><meta property="og:url" content="http://example.com/2023/12/01/3-2JavaScript%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/index.html"><meta property="og:site_name" content="亙壬的小站"><meta property="og:description" content="JavaScript基础注释1234&amp;#x2F;&amp;#x2F;单行注释&amp;#x2F;*多行注释*&amp;#x2F;  引入可以直接在HTML的script里面进行引入 数据类型1，number 数字，不论是整数还是小数，数据类型都是number 2，string 字符串 3，boolean 布尔值 true和false 4，object 对象 被n"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="http://example.com/img/default_cover.jpg"><meta property="article:author" content="亙壬"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/img/default_cover.jpg"><meta name="description" content="JavaScript基础注释1234&amp;#x2F;&amp;#x2F;单行注释&amp;#x2F;*多行注释*&amp;#x2F;  引入可以直接在HTML的script里面进行引入 数据类型1，number 数字，不论是整数还是小数，数据类型都是number 2，string 字符串 3，boolean 布尔值 true和false 4，object 对象 被n"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2023/12/01/3-2JavaScript%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: {"enable":true,"title":"与数百名博主无限进步","addFriendPlaceholder":"昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"},
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"勿忘我！","backTitle":"欢迎！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 亙壬","link":"链接: ","source":"来源: 亙壬的小站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '亙壬的小站',
+  title: '3.2 JavaScript从入门到精通',
+  postAI: '',
+  pageFillDescription: 'JavaScript基础, 注释, 引入, 数据类型, 六种声明变量的方法：, var, let, const, function, import, class, 总结：, var声明, 变量在没有声明之前不能用, 如果两个数一起进行声明赋值, let声明, 显式声明和隐式声明, 字符串, 字符串和数字拼接, 字符串转化成数字, 数字转化成字符串, 字符串方法, 运算符, 比较大小, and or not, x3Dx3D和x3Dx3Dx3D, 三目运算, 建立数组, 自增和自减, JavaScript函数, 计时器, 时间, eval函数, prototype, 变量提升, 总结：, 匿名函数, 闭包, 用window建立一个全局变量基础注释单行注释多行注释引入可以直接在的里面进行引入数据类型数字不论是整数还是小数数据类型都是字符串布尔值和对象被出来的东西都是对象这个表示没有定义所有没有被定义过的都默认是对象六种声明变量的方法是中声明变量的关键字使用声明的变量是全局变量或函数作用域变量全局变量可以在脚本的任何地方访问而函数作用域变量只能在声明它们的函数内部访问允许变量重新声明和重新赋值是中声明变量的另一个关键字使用声明的变量是块级作用域变量块级作用域变量只能在声明它们的块例如函数体循环体内部访问不允许变量重新声明但允许重新赋值是中声明常量的关键字使用声明的变量是常量这意味着它们的值不能被改变常量必须在声明时初始化并且不能重新赋值是中定义函数的关键字函数是一组可以被调用的语句函数可以接收参数并返回一个值中有两种类型的函数函数声明和函数表达式是中导入模块的关键字模块是代码的独立单元可以被其他模块导入和使用语句允许你将其他模块的代码导入到你的模块中是中定义类的关键字类是对象的蓝图它定义了对象的属性和方法你可以使用关键字来创建新的类并使用关键字来创建类的实例总结和用于声明变量但它们的作用域和赋值规则不同用于定义函数函数可以接收参数并返回一个值用于导入模块模块是代码的独立单元用于定义类类是对象的蓝图它定义了对象的属性和方法声明变量在没有声明之前不能用如果一个变量还没有被赋值此时该变量不应该被使用否则很危险声明变量正确的赋值调用控制台并输出类似的查看数据类型如果两个数一起进行声明赋值没有初始化被初始化声明同一个作用域里面声明的变量不允许声明两次因为只在同一作用域里面不允许重新声明所以很多用在闭包里面我爱你全局我不爱你了不允许这是局部作用域可以不允许显式声明和隐式声明显式声明是指在使用变量之前使用或关键字来声明它使用关键字显式声明变量使用关键字显式声明变量使用关键字显式声明常量隐式声明是指在没有使用或关键字的情况下声明变量隐式声明的变量都是变量使用隐式声明声明变量使用隐式声明声明变量使用隐式声明声明常量字符串字符串和数字拼接如果左右两边任意数据是字符串结局就是字符串拼接将会计算的值字符串转化成数字方法相当于计算的值数字转化成字符串官方野路子字符串方法切割判断有没有返回值运算符比较大小值和判断两端的值判断两端的值同时判断数据类型三目运算表达式比结果结果输出建立数组自增和自减前缀自增首先将变量的值增加然后返回新的值后缀自增首先返回变量的当前值然后将变量的值增加让自增类似语言让自增让自减让自减等于也等于等于但现在等于被转换成数字并增加现在是函数计时器单次计时器只会执行一次是设置一个定时器毫秒之后执行一个函数是清除定时器两秒后执行单位是毫秒清理计时器循环计时器会一直循环执行是设置一个定时器每隔毫秒执行一个函数是清除定时器秒之后执行两秒后清理时间创建一个日期对象默认情况就是系统时间不是完整的从年开始计算完整正常的年份月份从开始函数本质就是将字符串里面的函数运行参数一定是一个字符串一般不会使用在输出可以进行加解密加密网站将进行加密而要解密也很简单用一个变量接受然后打印就出来了控制台默认不能粘贴输入就可以粘贴了用一个变量接受加密的内容然后可以打印了可以动态的给类增加功能扩展就是往里面加内容硬往里面加创建一个类对某一事物的归纳总结有点类似中的构造方法我叫今年岁创建一个对象张三李四可以动态的往类里面加功能方法喜欢和一起玩王五变量提升里面代码执行顺序不是完全从上到下的代码在运行的时候会对代码进行检测如果有个变量被用到了而变量在后面创建会被检测到声明会提前检测逻辑如果变量放在后面而代码中调用了就会把声明提前只管声明不管赋值实际代码会变成声明提前了但是没有值打印当把换成或者就不会被提前和不会被多次声明声明不会被提前会出现总结变量提升仅仅提升声明不提升初始化或赋值操作如果一个变量在声明之前使用它的值将是函数声明也会被提升但函数表达式不会这意味着你可以在声明函数之前调用它但如果你使用一个函数表达式这种调用将会失败引入了和关键字这两者创建的变量不会被提升如果你在声明之前尝试使用这些变量将会导致匿名函数的匿名函数是指没有具体名称的函数它们通常只用于需要执行一次的场合在中函数有多种用途和写法以下是匿名函数的一些主要特点和用法闭包实现匿名函数可以创建闭包让函数内部的变量可以在外部访问这对于封装变量非常有用模拟块级作用域中的函数可以创建新的作用域函数可以用来模拟块级作用域减少全局变量污染立即执行函数表达式匿名函数可以立即执行常见的形式是这种模式非常适合初始化代码因为它可以立即执行而不干扰其他部分的代码事件处理和回调函数匿名函数经常用于事件处理和回调函数中因为它们往往只需要在特定事件发生时执行一次匿名函数的定义通常包含在多个小括号中这样可以避免语法错误并且能够立即执行函数内部的代码例如这是一个匿名函数本质就是这样闭包外层函数对内层函数的使用只能通过闭包函数的返回值来更改闭包里面的数据不能直接访问闭包函数内部的变量当把变量放在全局一个变量很容易就会被别人更改当形成一个自己的闭包变量就不会被改变但是闭包会占用很多内存周杰伦全局变量王力宏修改了全局变量变成了王力宏将变量放到闭包里面变成了局部变量闭包的使用当你想要调用闭包里面的东西无法直接使用闭包里面只能通过返回值进行调用多个方法就要多个返回值函数的返回值返回给调用的位置了用一个变量接受返回值这里的返回值是一个函数写一个加密功能我要开始加密了密钥是加密的密文是加密好的字节返回了一个函数我要开始加密了写一个加密功能处理一下这个数据加密密文直接返回一些函数我要开始加密了密钥是加密的密文是加密好的字节我要开始加密了密钥是加密的密文是加密好的字节我要开始加密了密钥是加密的密文是加密好的字节里面的函数可以互相调用我要开始加密了密钥是加密的密文是加密好的字节胡辣汤可以直接用进行调用返回的方法用建立一个全局变量窗口对象全局变量创建一个全局变量在闭包函数中向外界传递一些信息打印将赋值给为全局变量调用完函数后将在函数调用后不复存在他的值将被保存下来为全局变量可以在函数外部调用',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-07 20:07:30',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20210227105240_e3f66.jpeg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="安知鱼博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="安知鱼博客"/><span class="back-menu-item-text">安知鱼博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">亙壬的小站</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 目录</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190733.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190733.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190633.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190633.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/GitHub/" style="font-size: 1.05rem;">GitHub<sup>4</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>3</sup></a><a href="/tags/centos/" style="font-size: 1.05rem;">centos<sup>2</sup></a><a href="/tags/java/" style="font-size: 1.05rem;">java<sup>1</sup></a><a href="/tags/python/" style="font-size: 1.05rem;">python<sup>2</sup></a><a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="font-size: 1.05rem;">环境配置<sup>2</sup></a><a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 1.05rem;">网络<sup>3</sup></a><a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 1.05rem;">语法<sup>1</sup></a><a href="/tags/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/" style="font-size: 1.05rem;">远程控制<sup>2</sup></a><a href="/tags/%E9%92%93%E9%B1%BC/" style="font-size: 1.05rem;">钓鱼<sup>2</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">14</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">31</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">9</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">3.2 JavaScript从入门到精通</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2023-12-01T02:18:48.000Z" title="发表于 2023-12-01 10:18:48">2023-12-01</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-01-07T12:07:30.362Z" title="更新于 2024-01-07 20:07:30">2024-01-07</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/img/default_cover.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2023/12/01/3-2JavaScript%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"><header><h1 id="CrawlerTitle" itemprop="name headline">3.2 JavaScript从入门到精通</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">亙壬</span><time itemprop="dateCreated datePublished" datetime="2023-12-01T02:18:48.000Z" title="发表于 2023-12-01 10:18:48">2023-12-01</time><time itemprop="dateCreated datePublished" datetime="2024-01-07T12:07:30.362Z" title="更新于 2024-01-07 20:07:30">2024-01-07</time></header><h2 id="JavaScript基础"><a href="#JavaScript基础" class="headerlink" title="JavaScript基础"></a>JavaScript基础</h2><h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//单行注释</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">多行注释</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="引入"><a href="#引入" class="headerlink" title="引入"></a>引入</h3><p>可以直接在HTML的<code>script</code>里面进行引入</p>
+<h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p>1，<code>number</code> 数字，不论是整数还是小数，数据类型都是number</p>
+<p>2，<code>string</code> 字符串</p>
+<p>3，<code>boolean</code> 布尔值 true和false</p>
+<p>4，<code>object </code>对象 被new出来的东西都是对象</p>
+<p>5，<code>undefined</code> 这个表示没有定义，所有没有被定义过的都默认是对象</p>
+<h3 id="六种声明变量的方法："><a href="#六种声明变量的方法：" class="headerlink" title="六种声明变量的方法："></a><strong>六种声明变量的方法：</strong></h3><h4 id="var"><a href="#var" class="headerlink" title="var:"></a><strong>var:</strong></h4><ul>
+<li><ul>
+<li><code>var</code> 是 JavaScript 中声明变量的关键字。</li>
+<li>使用 <code>var</code> 声明的变量是全局变量或函数作用域变量。</li>
+<li>全局变量可以在脚本的任何地方访问，而函数作用域变量只能在声明它们的函数内部访问。</li>
+<li><code>var</code> <strong>允许变量重新声明和重新赋值</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="let"><a href="#let" class="headerlink" title="let:"></a><strong>let:</strong></h4><ul>
+<li><ul>
+<li><code>let</code> 是 JavaScript 中声明变量的另一个关键字。</li>
+<li>使用 <code>let</code> 声明的变量是块级作用域变量。</li>
+<li>块级作用域变量只能在声明它们的块（例如，函数体、循环体）内部访问。</li>
+<li><code>let</code> <strong>不允许变量重新声明</strong>，但允许重新赋值。</li>
+</ul>
+</li>
+</ul>
+<h4 id="const"><a href="#const" class="headerlink" title="const:"></a><strong>const:</strong></h4><ul>
+<li><ul>
+<li><code>const</code> 是 JavaScript 中声明常量的关键字。</li>
+<li>使用 <code>const</code> 声明的变量是常量，这意味着它们的值不能被改变。</li>
+<li><strong>常量必须在声明时初始化，并且不能重新赋值。</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="function"><a href="#function" class="headerlink" title="function:"></a><strong>function:</strong></h4><ul>
+<li><ul>
+<li><code>function</code> 是 JavaScript 中定义函数的关键字。</li>
+<li>函数是一组可以被调用的语句。</li>
+<li>函数可以接收参数，并返回一个值。</li>
+<li>JavaScript 中有两种类型的函数：函数声明和函数表达式。</li>
+</ul>
+</li>
+</ul>
+<h4 id="import"><a href="#import" class="headerlink" title="import:"></a><strong>import:</strong></h4><ul>
+<li><ul>
+<li><code>import</code> 是 JavaScript 中导入模块的关键字。</li>
+<li>模块是 JavaScript 代码的独立单元，可以被其他模块导入和使用。</li>
+<li><code>import</code> 语句允许你将其他模块的代码导入到你的模块中。</li>
+</ul>
+</li>
+</ul>
+<h4 id="class"><a href="#class" class="headerlink" title="class:"></a><strong>class:</strong></h4><ul>
+<li><ul>
+<li><code>class</code> 是 JavaScript 中定义类的关键字。</li>
+<li>类是对象的蓝图，它定义了对象的属性和方法。</li>
+<li>你可以使用 <code>class</code> 关键字来创建新的类，并使用 <code>new</code> 关键字来创建类的实例。</li>
+</ul>
+</li>
+</ul>
+<h4 id="总结："><a href="#总结：" class="headerlink" title="总结："></a><strong>总结：</strong></h4><ul>
+<li><code>var</code>、<code>let</code> 和 <code>const</code> 用于声明变量，但它们的作用域和赋值规则不同。</li>
+<li><code>function</code> 用于定义函数，函数可以接收参数并返回一个值。</li>
+<li><code>import</code> 用于导入模块，模块是 JavaScript 代码的独立单元。</li>
+<li><code>class</code> 用于定义类，类是对象的蓝图，它定义了对象的属性和方法。</li>
+</ul>
+<h3 id="var声明"><a href="#var声明" class="headerlink" title="var声明"></a>var声明</h3><h4 id="变量在没有声明之前不能用"><a href="#变量在没有声明之前不能用" class="headerlink" title="变量在没有声明之前不能用"></a><strong>变量在没有声明之前不能用</strong></h4><p><strong>如果一个变量还没有被赋值，此时该变量不应该被使用，否则很危险</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a,b,c;   <span class="comment">//声明变量</span></span><br><span class="line"><span class="keyword">var</span> d =<span class="number">10</span>; <span class="comment">//正确的赋值</span></span><br><span class="line">cosole.<span class="title function_">log</span>(d); <span class="comment">//调用控制台，并输出，类似python的print</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">typeof</span>(d));<span class="comment">//查看数据类型</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="如果两个数一起进行声明赋值"><a href="#如果两个数一起进行声明赋值" class="headerlink" title="如果两个数一起进行声明赋值"></a><strong>如果两个数一起进行声明赋值</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a,b=<span class="number">18</span>;</span><br><span class="line"><span class="comment">//a没有初始化，b被初始化，b=18</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="let声明"><a href="#let声明" class="headerlink" title="let声明"></a>let声明</h3><p>同一个作用域里面，<code>let</code>声明的变量，不允许声明两次</p>
+<p>因为只在同一作用域里面，不允许重新声明，所以很多用在闭包里面</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> abc = <span class="string">&quot;我爱你&quot;</span>；<span class="comment">//全局</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(abc)</span><br><span class="line"><span class="keyword">let</span> abc = <span class="string">&quot;我不爱你了&quot;</span><span class="comment">//不允许</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">let</span> abc=<span class="string">&#x27;xxx&#x27;</span>;<span class="comment">//这是局部作用域，可以</span></span><br><span class="line">  <span class="keyword">let</span> abc=<span class="string">&#x27;xxx&#x27;</span>;<span class="comment">//不允许</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="显式声明和隐式声明"><a href="#显式声明和隐式声明" class="headerlink" title="显式声明和隐式声明"></a>显式声明和隐式声明</h3><p><strong>显式声明</strong>是指在使用变量之前使用 <code>var</code>、<code>let</code> 或 <code>const</code> 关键字来声明它。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 var 关键字显式声明变量</span></span><br><span class="line"><span class="keyword">var</span> name = <span class="string">&quot;John Doe&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 let 关键字显式声明变量</span></span><br><span class="line"><span class="keyword">let</span> age = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 const 关键字显式声明常量</span></span><br><span class="line"><span class="keyword">const</span> city = <span class="string">&quot;New York&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p><strong>隐式声明</strong>是指在没有使用 <code>var</code>、<code>let</code> 或 <code>const</code> 关键字的情况下声明变量。</p>
+<p><strong>隐式声明的变量都是 <code>var</code> 变量。</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用隐式声明声明变量</span></span><br><span class="line">name = <span class="string">&quot;John Doe&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用隐式声明声明变量</span></span><br><span class="line">age = <span class="number">30</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用隐式声明声明常量</span></span><br><span class="line">city = <span class="string">&quot;New York&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><h4 id="字符串和数字拼接"><a href="#字符串和数字拼接" class="headerlink" title="字符串和数字拼接"></a>字符串和数字拼接</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b=<span class="string">&#x27;11111&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(b+<span class="number">10</span>);  </span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">10</span>+b); <span class="comment">//如果+左右两边任意数据是字符串，结局就是字符串拼接</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="number">5</span>+<span class="number">5</span>); <span class="comment">//将会计算5+5的值</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串转化成数字"><a href="#字符串转化成数字" class="headerlink" title="字符串转化成数字"></a>字符串转化成数字</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> b=<span class="string">&#x27;11111&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> c = <span class="built_in">parseInt</span>(b);  <span class="comment">//parseInt(b)方法相当于int(b)</span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(c+<span class="number">5</span>); <span class="comment">//计算11111+5的值</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="数字转化成字符串"><a href="#数字转化成字符串" class="headerlink" title="数字转化成字符串"></a>数字转化成字符串</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">d= <span class="number">10086</span></span><br><span class="line">f = d.<span class="title function_">toString</span>() <span class="comment">//官方</span></span><br><span class="line">f= d+<span class="string">&#x27;&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title function_">typeof</span>(f)) <span class="comment">//野路子</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(f)</span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串方法"><a href="#字符串方法" class="headerlink" title="字符串方法"></a>字符串方法</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> s = <span class="string">&#x27;yiersansiwuliuqi&#x27;</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">split</span>(<span class="string">&quot; &quot;</span>));<span class="comment">//切割</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">substr</span>(<span class="number">3</span>,<span class="number">4</span>))  <span class="comment">//substr(start,len)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">substring</span>(<span class="number">3</span>,<span class="number">4</span>)) <span class="comment">//s[3:4]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="property">length</span>)<span class="comment">//len(s)</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">charAt</span>(<span class="number">3</span>))<span class="comment">//s[3]</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(s.<span class="title function_">indexOf</span>(<span class="string">&#x27;yiersansi&#x27;</span>))  <span class="comment">//判断有没有，返回bool值</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><h4 id="比较大小"><a href="#比较大小" class="headerlink" title="比较大小"></a>比较大小</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">3</span> &lt; <span class="number">2</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a) <span class="comment">//boolean值</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="and-or-not"><a href="#and-or-not" class="headerlink" title="and or not"></a><strong>and or not</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>((<span class="number">3.2</span>) || (<span class="number">1</span>&gt;<span class="number">5</span>))</span><br></pre></td></tr></table></figure>
+
+<h4 id="和"><a href="#和" class="headerlink" title="&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;"></a><strong>&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a= <span class="string">&#x27;10086&#x27;</span></span><br><span class="line">b=<span class="number">10086</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a==b) <span class="comment">//==判断两端的值</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(a===b) <span class="comment">// ===判断两端的值，同时判断数据类型</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="三目运算"><a href="#三目运算" class="headerlink" title="三目运算"></a><strong>三目运算</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">10</span></span><br><span class="line"><span class="keyword">var</span> b = <span class="number">22</span></span><br><span class="line"><span class="keyword">var</span> c = a &gt; b ? a : b   <span class="comment">//表达式比1？结果1：结果2</span></span><br><span class="line">a= <span class="number">20</span></span><br><span class="line">b=<span class="number">10</span></span><br><span class="line"><span class="keyword">var</span> c = a &gt; b ? a : b ? a :b</span><br><span class="line"><span class="keyword">var</span> c = a &gt; b ? (a) : (b ? a :b)   <span class="comment">//输出a 20</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="建立数组"><a href="#建立数组" class="headerlink" title="建立数组"></a><strong>建立数组</strong></h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="title class_">Array</span>(); </span><br></pre></td></tr></table></figure>
+
+<h4 id="自增和自减"><a href="#自增和自减" class="headerlink" title="自增和自减"></a><strong>自增和自减</strong></h4><ul>
+<li><p><strong>前缀自增</strong> (<strong>++i</strong>)：首先将变量的值增加1，然后返回新的值。</p>
+</li>
+<li><p><strong>后缀自增</strong> (<strong>i++</strong>)：首先返回变量的当前值，然后将变量的值增加1</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> i =<span class="number">10</span>;</span><br><span class="line">i++; <span class="comment">//让i自增1，i+=1 ,类似c语言</span></span><br><span class="line">++i;<span class="comment">//让i自增1，i+=1</span></span><br><span class="line">i--;<span class="comment">//让i自减1，i-=1</span></span><br><span class="line">--i;<span class="comment">//让i自减1，i-=1</span></span><br><span class="line"><span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">let</span> j = ++i; <span class="comment">// j等于1, i也等于1</span></span><br><span class="line"><span class="keyword">let</span> k = i++; <span class="comment">// k等于1, 但i现在等于2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> value = <span class="string">&quot;5&quot;</span>;</span><br><span class="line">value++; <span class="comment">// value被转换成数字并增加1，现在是6</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="JavaScript函数"><a href="#JavaScript函数" class="headerlink" title="JavaScript函数"></a>JavaScript函数</h2><h3 id="计时器"><a href="#计时器" class="headerlink" title="计时器"></a>计时器</h3><p><strong>单次计时器，只会执行一次</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setTimeout()是设置一个定时器，1000毫秒之后，执行一个函数</span><br><span class="line">clearTimeout()是清除定时器</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="title function_">alert</span>(<span class="string">&#x27;两秒后执行&#x27;</span>)</span><br><span class="line">&#125;,<span class="number">2000</span>);<span class="comment">//单位是毫秒</span></span><br><span class="line">windows.<span class="built_in">clearTimeout</span>(t)<span class="comment">//清理计时器</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>循环计时器，会一直循环执行</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setInterval()是设置一个定时器，每隔1000毫秒，执行一个函数</span><br><span class="line">clearInterval()是清除定时器</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> t = <span class="built_in">setInterval</span>(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">	<span class="title function_">alert</span>(<span class="string">&quot;1秒之后执行&quot;</span>);</span><br><span class="line">&#125;,<span class="number">1000</span>);</span><br><span class="line"><span class="comment">//两秒后清理</span></span><br><span class="line"><span class="built_in">setTimeout</span>(<span class="keyword">function</span> (<span class="params"></span>)&#123;<span class="variable language_">window</span>.<span class="built_in">clearInterval</span>()&#125;,<span class="number">2000</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="时间"><a href="#时间" class="headerlink" title="时间"></a>时间</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date = <span class="keyword">new</span> <span class="title class_">Date</span>();<span class="comment">//创建一个日期对象，默认情况就是系统时间</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(date);</span><br><span class="line"><span class="keyword">var</span> year = date.<span class="title function_">getYear</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(year);<span class="comment">//不是完整的，从1900年开始计算</span></span><br><span class="line"><span class="keyword">var</span> year2 = date.<span class="title function_">getFullYear</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(year2);<span class="comment">//完整正常的年份</span></span><br><span class="line"><span class="keyword">var</span> month = date.<span class="title function_">getMonth</span>();</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(month)<span class="comment">//月份从0开始</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="eval函数"><a href="#eval函数" class="headerlink" title="eval函数"></a>eval函数</h3><p>本质就是将字符串里面的函数运行，参数一定是一个字符串，一般不会使用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s=<span class="string">&quot;console.log(&#x27;web2302&#x27;)&quot;</span></span><br><span class="line"><span class="built_in">eval</span>(s) <span class="comment">//在console输出web2302</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><code>eval</code>可以进行加解密</p>
+<p>加密网站:<a target="_blank" rel="noopener" href="https://www.w3cschool.cn/tools/index?name=evalencode">https://www.w3cschool.cn/tools/index?name=evalencode</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//将console(&#x27;web2302&#x27;)进行加密</span><br><span class="line">eval(function(p,a,c,k,e,d)&#123;e=function(c)&#123;return(c&lt;a?&#x27;&#x27;:e(parseInt(c/a)))+((c=c%a)&gt;35?String.fromCharCode(c+29):c.toString(36))&#125;;if(!&#x27;&#x27;.replace(/^/,String))&#123;while(c--)d[e(c)]=k[c]||e(c);k=[function(e)&#123;return d[e]&#125;];e=function()&#123;return&#x27;\\w+&#x27;&#125;;c=1&#125;;while(c--)if(k[c])p=p.replace(new RegExp(&#x27;\\b&#x27;+e(c)+&#x27;\\b&#x27;,&#x27;g&#x27;),k[c]);return p&#125;(&#x27;0(&quot;1&quot;)&#x27;,62,2,&#x27;console|web2302&#x27;.split(&#x27;|&#x27;),0,&#123;&#125;))</span><br></pre></td></tr></table></figure>
+
+<p>而要解密也很简单，用一个变量接受，然后打印就出来了</p>
+<p>console控制台默认不能粘贴，输入&#96;&#96;allow pasting&#96;   就可以粘贴了</p>
+<p>用一个变量接受加密的内容，然后可以打印了</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var m = function(p,a,c,k,e,d)&#123;e=function(c)&#123;return(c&lt;a?&#x27;&#x27;:e(parseInt(c/a)))+((c=c%a)&gt;35?String.fromCharCode(c+29):c.toString(36))&#125;;if(!&#x27;&#x27;.replace(/^/,String))&#123;while(c--)d[e(c)]=k[c]||e(c);k=[function(e)&#123;return d[e]&#125;];e=function()&#123;return&#x27;\\w+&#x27;&#125;;c=1&#125;;while(c--)if(k[c])p=p.replace(new RegExp(&#x27;\\b&#x27;+e(c)+&#x27;\\b&#x27;,&#x27;g&#x27;),k[c]);return p&#125;(&#x27;0(&quot;1&quot;)&#x27;,62,2,&#x27;console|web2302&#x27;.split(&#x27;|&#x27;),0,&#123;&#125;);</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="C:\Users\19279\AppData\Roaming\Typora\typora-user-images\image-20240106165241347.png" alt="image-20240106165241347"></p>
+<h3 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h3><p><code>prototype</code>可以动态的给类增加功能扩展</p>
+<p>就是往里面加内容，硬往里面加</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//创建一个类，对某一事物的归纳总结</span></span><br><span class="line"><span class="comment">//有点类似java中的构造方法</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">Person</span>(<span class="params">name,age</span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span> = name;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span> = age;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">say</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我叫&quot;</span>+<span class="variable language_">this</span>.<span class="property">name</span>+<span class="string">&quot;今年&quot;</span>+<span class="variable language_">this</span>.<span class="property">age</span>+<span class="string">&quot;岁&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//创建一个对象</span></span><br><span class="line">p1 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;张三&quot;</span>, <span class="number">20</span>);</span><br><span class="line">p2 = <span class="keyword">new</span> <span class="title class_">Person</span>(<span class="string">&quot;李四&quot;</span>, <span class="number">30</span>);</span><br><span class="line">p1.<span class="title function_">say</span>();</span><br><span class="line"><span class="comment">//prototype可以动态的往类里面加功能(方法)</span></span><br><span class="line"><span class="title class_">Person</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">play</span> = <span class="keyword">function</span> (<span class="params">name</span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="variable language_">this</span>.<span class="property">name</span>+<span class="string">&quot;喜欢和&quot;</span>+name+<span class="string">&quot;一起玩&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line">p1.<span class="title function_">play</span>(<span class="string">&quot;王五&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p>js里面代码执行顺序不是完全从上到下的，js代码在运行的时候，会对代码进行检测</p>
+<p>如果有个变量被用到了，而变量在后面创建，会被检测到，声明会提前</p>
+<p>检测逻辑：如果变量放在后面，而代码中调用了，就会把声明提前，只管声明不管赋值</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>)&#123;</span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">  <span class="keyword">var</span> name = <span class="string">&quot;alex&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 实际代码会变成</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>)&#123;<span class="comment">//声明提前了，但是没有值，打印undefined</span></span><br><span class="line">    <span class="keyword">var</span> name；</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">    name = <span class="string">&quot;alex&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当把var换成let或者const就不会被提前</p>
+<p><code>let</code>和&#96;&#96;const&#96;不会被多次声明</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>)&#123;<span class="comment">//声明不会被提前，会出现ReferenceError</span></span><br><span class="line">	<span class="variable language_">console</span>.<span class="title function_">log</span>(name);</span><br><span class="line">  	<span class="keyword">let</span> name = <span class="string">&quot;name&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="总结：-1"><a href="#总结：-1" class="headerlink" title="总结："></a>总结：</h4><ol>
+<li>变量提升仅仅提升声明，不提升初始化或赋值操作。如果一个变量在声明之前使用，它的值将是<code>undefined</code>。 </li>
+<li>函数声明也会被提升，但函数表达式不会。这意味着你可以在声明函数之前调用它，但如果你使用一个函数表达式，这种调用将会失败。 </li>
+<li>ES6引入了<code>let</code>和<code>const</code>关键字，这两者创建的变量不会被提升。如果你在声明之前尝试使用这些变量，将会导致<code>ReferenceError</code>。</li>
+</ol>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p>JavaScript的匿名函数是指没有具体名称的函数，它们通常只用于需要执行一次的场合。在JavaScript中，函数有多种用途和写法。以下是匿名函数的一些主要特点和用法：</p>
+<ul>
+<li><strong>闭包实现</strong>：匿名函数可以创建闭包，让函数内部的变量可以在外部访问，这对于封装变量非常有用。</li>
+<li><strong>模拟块级作用域</strong>：JavaScript中的函数可以创建新的作用域，函数可以用来模拟块级作用域，减少全局变量污染。</li>
+<li><strong>立即执行函数表达式（IIFE）</strong>：匿名函数可以立即执行，常见的形式是<code>(function()&#123;...&#125;)();</code>。这种模式非常适合初始化代码，因为它可以立即执行而不干扰其他部分的代码。</li>
+<li><strong>事件处理和回调函数</strong>：匿名函数经常用于事件处理和回调函数中，因为它们往往只需要在特定事件发生时执行一次。</li>
+</ul>
+<p>匿名函数的定义通常包含在多个小括号中，这样可以避免语法错误，并且能够立即执行函数内部的代码。例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;这是一个匿名函数&#x27;</span>);</span><br><span class="line">&#125;)();</span><br><span class="line">(<span class="keyword">function</span>(<span class="params"></span>)&#123;&#125;)();<span class="comment">//本质就是这样</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p><strong>外层函数对内层函数的使用</strong></p>
+<ul>
+<li>只能通过闭包函数的返回值来更改闭包里面的数据。</li>
+<li>不能直接访问闭包函数内部的变量。</li>
+</ul>
+<p>当把变量放在全局，一个变量很容易就会被别人更改</p>
+<p>当形成一个自己的闭包，变量就不会被改变，但是闭包会占用很多内存</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> name = <span class="string">&#x27;周杰伦&#x27;</span>;<span class="comment">//全局变量</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>)&#123;</span><br><span class="line">  name = <span class="string">&quot;王力宏&quot;</span>;  <span class="comment">//修改了全局变量</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">fn</span>()</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(name);  <span class="comment">//变成了王力宏</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>将变量放到闭包里面</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="keyword">var</span> name = <span class="string">&#x27;alex&#x27;</span>;<span class="comment">//变成了局部变量</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+
+<p><strong>闭包的使用</strong></p>
+<p>当你想要调用闭包里面的东西，无法直接使用闭包里面jiami</p>
+<p>只能通过返回值进行调用，多个方法就要多个返回值</p>
+<p>函数的返回值-&gt; 返回给调用的位置了</p>
+<p>用一个变量<code>mm</code>接受返回值，这里的返回值是一个函数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mm = (<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">  <span class="comment">//写一个加密功能</span></span><br><span class="line">  <span class="keyword">let</span> key = <span class="string">&quot;10086&quot;</span>;</span><br><span class="line">  <span class="keyword">let</span> jiami = <span class="keyword">function</span>(<span class="params">data</span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我要开始加密了，密钥是&quot;</span>+key+<span class="string">&quot;,加密的密文是：&quot;</span>+data);</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&quot;加密好的字节&quot;</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> jiami; <span class="comment">//返回了一个函数</span></span><br><span class="line">&#125;)()；</span><br><span class="line"><span class="title function_">mm</span>(<span class="string">&quot;我要开始加密了&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> jm = (<span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">    <span class="comment">//写一个加密功能</span></span><br><span class="line">    <span class="keyword">let</span> key = <span class="string">&quot;10086&quot;</span>;</span><br><span class="line">    <span class="keyword">let</span> process = <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;处理一下这个数据&quot;</span> + data);</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;加密密文&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//直接返回一些函数</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">        <span class="attr">rsa_jiami</span>: <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span><br><span class="line">            data = <span class="title function_">process</span>(data);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我要开始rsa加密了，密钥是&quot;</span> + key + <span class="string">&quot;,加密的密文是：&quot;</span> + data);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;加密好的字节&quot;</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">aes_jiami</span>: <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span><br><span class="line">            data = <span class="title function_">process</span>(data);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我要开始aes加密了，密钥是&quot;</span> + key + <span class="string">&quot;,加密的密文是：&quot;</span> + data);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;加密好的字节&quot;</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">sha1_jiami</span>: <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span><br><span class="line">            data = <span class="title function_">process</span>(data);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我要开始sha1加密了，密钥是&quot;</span> + key + <span class="string">&quot;,加密的密文是：&quot;</span> + data);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;加密好的字节&quot;</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="attr">md5_jiami</span>: <span class="keyword">function</span> (<span class="params">data</span>) &#123;</span><br><span class="line">            <span class="comment">//ret = this.aes_jiami(data);//里面的函数可以互相调用</span></span><br><span class="line">            data = <span class="title function_">process</span>(data);</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;我要开始md5加密了，密钥是&quot;</span> + key + <span class="string">&quot;,加密的密文是：&quot;</span> + data);</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;加密好的字节&quot;</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)();</span><br><span class="line">miwen = jm.<span class="title function_">md5_jiami</span>(<span class="string">&quot;胡辣汤&quot;</span>);<span class="comment">//可以直接用.进行调用返回的方法</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="用window建立一个全局变量"><a href="#用window建立一个全局变量" class="headerlink" title="用window建立一个全局变量"></a>用window建立一个全局变量</h3><p>窗口对象–&gt;全局变量 (nnn)<br>创建一个全局变量–&gt;在闭包函数中向外界传递一些信息</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">fn</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> name = <span class="string">&quot;wusir&quot;</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(name);<span class="comment">//打印name</span></span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">nnn</span> = name;<span class="comment">//将name赋值给nnn,nnn为全局变量</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">fn</span>()<span class="comment">//调用完函数后，name将在函数调用后不复存在，他的值将被nnn保存下来</span></span><br><span class="line">nnn=<span class="string">&quot;lalala&quot;</span>;<span class="comment">//nnn为全局变量，可以在函数外部调用</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(nnn)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>​	</p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/avatar.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/avatar.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">亙壬</div><div class="post-copyright__author_desc">邱章程</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2023/12/01/3-2JavaScript%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2023/12/01/3-2JavaScript%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/')">3.2 JavaScript从入门到精通</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190733.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190733.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190633.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190633.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2023/12/01/3-2JavaScript%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=3.2 JavaScript从入门到精通&amp;url=http://example.com/2023/12/01/3-2JavaScript%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/&amp;pic=/img/default_cover.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">亙壬的小站</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="/img/default_cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/12/01/3-1python%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9D%9F/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">3.1 python从入门到精通</div></div></a></div><div class="next-post pull-right"><a href="/2023/12/02/4-0%E9%92%93%E9%B1%BC%E7%BD%91%E7%AB%99/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">4.0 钓鱼网站</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about"><h1 class="author-info__name">亙壬</h1><div class="author-info__desc">邱章程</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/dashboard" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/644240914/" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来看我的博客鸭~</div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/thumb1625855025341.jpg) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/1631726478133.jpg) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript%E5%9F%BA%E7%A1%80"><span class="toc-number">1.</span> <span class="toc-text">JavaScript基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E9%87%8A"><span class="toc-number">1.1.</span> <span class="toc-text">注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%95%E5%85%A5"><span class="toc-number">1.2.</span> <span class="toc-text">引入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.</span> <span class="toc-text">数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%E7%A7%8D%E5%A3%B0%E6%98%8E%E5%8F%98%E9%87%8F%E7%9A%84%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">1.4.</span> <span class="toc-text">六种声明变量的方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#var"><span class="toc-number">1.4.1.</span> <span class="toc-text">var:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#let"><span class="toc-number">1.4.2.</span> <span class="toc-text">let:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#const"><span class="toc-number">1.4.3.</span> <span class="toc-text">const:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#function"><span class="toc-number">1.4.4.</span> <span class="toc-text">function:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#import"><span class="toc-number">1.4.5.</span> <span class="toc-text">import:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#class"><span class="toc-number">1.4.6.</span> <span class="toc-text">class:</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">1.4.7.</span> <span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#var%E5%A3%B0%E6%98%8E"><span class="toc-number">1.5.</span> <span class="toc-text">var声明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E5%9C%A8%E6%B2%A1%E6%9C%89%E5%A3%B0%E6%98%8E%E4%B9%8B%E5%89%8D%E4%B8%8D%E8%83%BD%E7%94%A8"><span class="toc-number">1.5.1.</span> <span class="toc-text">变量在没有声明之前不能用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A6%82%E6%9E%9C%E4%B8%A4%E4%B8%AA%E6%95%B0%E4%B8%80%E8%B5%B7%E8%BF%9B%E8%A1%8C%E5%A3%B0%E6%98%8E%E8%B5%8B%E5%80%BC"><span class="toc-number">1.5.2.</span> <span class="toc-text">如果两个数一起进行声明赋值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#let%E5%A3%B0%E6%98%8E"><span class="toc-number">1.6.</span> <span class="toc-text">let声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%98%BE%E5%BC%8F%E5%A3%B0%E6%98%8E%E5%92%8C%E9%9A%90%E5%BC%8F%E5%A3%B0%E6%98%8E"><span class="toc-number">1.7.</span> <span class="toc-text">显式声明和隐式声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.8.</span> <span class="toc-text">字符串</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8C%E6%95%B0%E5%AD%97%E6%8B%BC%E6%8E%A5"><span class="toc-number">1.8.1.</span> <span class="toc-text">字符串和数字拼接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E6%88%90%E6%95%B0%E5%AD%97"><span class="toc-number">1.8.2.</span> <span class="toc-text">字符串转化成数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%97%E8%BD%AC%E5%8C%96%E6%88%90%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="toc-number">1.8.3.</span> <span class="toc-text">数字转化成字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%96%B9%E6%B3%95"><span class="toc-number">1.8.4.</span> <span class="toc-text">字符串方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="toc-number">1.9.</span> <span class="toc-text">运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AF%94%E8%BE%83%E5%A4%A7%E5%B0%8F"><span class="toc-number">1.9.1.</span> <span class="toc-text">比较大小</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#and-or-not"><span class="toc-number">1.9.2.</span> <span class="toc-text">and or not</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%92%8C"><span class="toc-number">1.9.3.</span> <span class="toc-text">&#x3D;&#x3D;和&#x3D;&#x3D;&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E7%9B%AE%E8%BF%90%E7%AE%97"><span class="toc-number">1.9.4.</span> <span class="toc-text">三目运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B%E6%95%B0%E7%BB%84"><span class="toc-number">1.9.5.</span> <span class="toc-text">建立数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%A2%9E%E5%92%8C%E8%87%AA%E5%87%8F"><span class="toc-number">1.9.6.</span> <span class="toc-text">自增和自减</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript%E5%87%BD%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">JavaScript函数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A1%E6%97%B6%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">计时器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4"><span class="toc-number">2.2.</span> <span class="toc-text">时间</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#eval%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.</span> <span class="toc-text">eval函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#prototype"><span class="toc-number">2.4.</span> <span class="toc-text">prototype</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%98%E9%87%8F%E6%8F%90%E5%8D%87"><span class="toc-number">2.5.</span> <span class="toc-text">变量提升</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A-1"><span class="toc-number">2.5.1.</span> <span class="toc-text">总结：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0"><span class="toc-number">2.6.</span> <span class="toc-text">匿名函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%97%AD%E5%8C%85"><span class="toc-number">2.7.</span> <span class="toc-text">闭包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8window%E5%BB%BA%E7%AB%8B%E4%B8%80%E4%B8%AA%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="toc-number">2.8.</span> <span class="toc-text">用window建立一个全局变量</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/01/07/23-windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" title="23.windows常见命令学习"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="23.windows常见命令学习"/></a><div class="content"><a class="title" href="/2024/01/07/23-windows%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/" title="23.windows常见命令学习">23.windows常见命令学习</a><time datetime="2024-01-07T07:26:49.000Z" title="发表于 2024-01-07 15:26:49">2024-01-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/04/21-MONEYBOX%E5%AD%A6%E4%B9%A0/" title="21.vulnhub-MONEYBOX1学习"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="21.vulnhub-MONEYBOX1学习"/></a><div class="content"><a class="title" href="/2024/01/04/21-MONEYBOX%E5%AD%A6%E4%B9%A0/" title="21.vulnhub-MONEYBOX1学习">21.vulnhub-MONEYBOX1学习</a><time datetime="2024-01-04T09:15:53.000Z" title="发表于 2024-01-04 17:15:53">2024-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/04/20-oracle%20mv%20virtualbox/" title="20.oracle mv virtualbox"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="20.oracle mv virtualbox"/></a><div class="content"><a class="title" href="/2024/01/04/20-oracle%20mv%20virtualbox/" title="20.oracle mv virtualbox">20.oracle mv virtualbox</a><time datetime="2024-01-04T06:07:10.000Z" title="发表于 2024-01-04 14:07:10">2024-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/04/19-pikachu/" title="19.Pikachu"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="19.Pikachu"/></a><div class="content"><a class="title" href="/2024/01/04/19-pikachu/" title="19.Pikachu">19.Pikachu</a><time datetime="2024-01-04T02:27:10.000Z" title="发表于 2024-01-04 10:27:10">2024-01-04</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/02/17-4%E9%9D%B6%E6%9C%BAtest/" title="17.4 靶机test"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="17.4 靶机test"/></a><div class="content"><a class="title" href="/2024/01/02/17-4%E9%9D%B6%E6%9C%BAtest/" title="17.4 靶机test">17.4 靶机test</a><time datetime="2024-01-02T07:29:49.000Z" title="发表于 2024-01-02 15:29:49">2024-01-02</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="亙壬" target="_blank">亙壬</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">54</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="安知鱼博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="安知鱼博客"/><span class="back-menu-item-text">安知鱼博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 目录</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/GitHub/" style="font-size: 0.88rem;">GitHub<sup>4</sup></a><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>3</sup></a><a href="/tags/centos/" style="font-size: 0.88rem;">centos<sup>2</sup></a><a href="/tags/java/" style="font-size: 0.88rem;">java<sup>1</sup></a><a href="/tags/python/" style="font-size: 0.88rem;">python<sup>2</sup></a><a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="font-size: 0.88rem;">环境配置<sup>2</sup></a><a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 0.88rem;">网络<sup>3</sup></a><a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 0.88rem;">语法<sup>1</sup></a><a href="/tags/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/" style="font-size: 0.88rem;">远程控制<sup>2</sup></a><a href="/tags/%E9%92%93%E9%B1%BC/" style="font-size: 0.88rem;">钓鱼<sup>2</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.4/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.10",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 亙壬 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "visitor@anheyu.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
