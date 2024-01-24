@@ -1,0 +1,392 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>32.3 密码学 | 亙壬的小站</title><meta name="author" content="亙壬"><meta name="copyright" content="亙壬"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="32.3 密码学"><meta name="application-name" content="32.3 密码学"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="32.3 密码学"><meta property="og:url" content="http://example.com/2024/01/01/32-3%E5%AF%86%E7%A0%81%E5%AD%A6/index.html"><meta property="og:site_name" content="亙壬的小站"><meta property="og:description" content="密码学密码学的基本概念密码学是关于信息保护和数据安全的学科，它涵盖了多个领域，包括加密、解密、数字签名、认证、密钥管理等。密码学的目标是确保信息在通信和存储过程中不会被未经授权的人获取、篡改或泄露。为实现这些目标，密码学引入了多种技术和算法，旨在构建安全的通信渠道和数据存储机制。明文(Plainte"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="http://example.com/img/default_cover.jpg"><meta property="article:author" content="亙壬"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="http://example.com/img/default_cover.jpg"><meta name="description" content="密码学密码学的基本概念密码学是关于信息保护和数据安全的学科，它涵盖了多个领域，包括加密、解密、数字签名、认证、密钥管理等。密码学的目标是确保信息在通信和存储过程中不会被未经授权的人获取、篡改或泄露。为实现这些目标，密码学引入了多种技术和算法，旨在构建安全的通信渠道和数据存储机制。明文(Plainte"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="http://example.com/2024/01/01/32-3%E5%AF%86%E7%A0%81%E5%AD%A6/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: {"enable":true,"title":"与数百名博主无限进步","addFriendPlaceholder":"昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到我自己的图床）：\n描述：\n站点截图（可选）：\n"},
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2023/09/03/125766904/ee23df8517f3c3e3efc4145658269c06_5714860933110284659.png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"勿忘我！","backTitle":"欢迎！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: {"skills":["🤖️ 数码科技爱好者","🔍 分享与热心帮助","🏠 智能家居小能手","🔨 设计开发一条龙","🤝 专修交互与设计","🏃 脚踏实地行动派","🧱 团队小组发动机","💢 壮汉人狠话不多"]},
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: undefined,
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 亙壬","link":"链接: ","source":"来源: 亙壬的小站","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.1.2/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '亙壬的小站',
+  title: '32.3 密码学',
+  postAI: '',
+  pageFillDescription: '密码学, 密码学的基本概念, 密码学的目的, 密码学的分类, Base家族, Unicode编码, URL编码, 栅栏密码, 培根密码密码学密码学的基本概念密码学是关于信息保护和数据安全的学科它涵盖了多个领域包括加密解密数字签名认证密钥管理等密码学的目标是确保信息在通信和存储过程中不会被未经授权的人获取篡改或泄露为实现这些目标密码学引入了多种技术和算法旨在构建安全的通信渠道和数据存储机制明文未经加密的原始数据通常是人类可读的形式密文经过加密的数据通常是不可读或难以理解的形式加密算法使用特定的方法和密钥将明文转换为密文的过程解密算法使用相应的密钥将密文还原为明文的过程密钥在加密和解密过程中使用的值密钥的安全性直接影响到加密系统的安全性密码学的目的密码设计者的根本目标是保障信息及信息系统的机密性完整性可用性认证性不可否认性三要素是指信息安全领域的三个核心概念分别是机密性完整性和可用性这三个要素构成了信息安全的基础确保了数据和系统的安全性和可信性机密性确保信息在传输和存储中不被未经授权的人访问加密技术用于实现这一目标只有授权用户才能解密并查看信息完整性确保信息在传输和存储中不被篡改消息认证码和哈希函数等技术用于验证数据的完整性可用性确保系统和数据在需要时可以正常使用和访问不受到故障攻击或其他威胁的影响密码学的分类古典密码学指的是在计算机和现代密码学技术出现之前使用的传统加密方法如凯撒密码替代密码等这些方法主要基于替换和重排字符来隐藏信息凯撒密码凯撒密码是一种置换密码由古罗马的凯撒大帝使用它通过将字母向后移动固定的位置来加密文本例如如果将字母按字母表顺序向后移动个位置就可以将加密成然而古典密码很容易被破解因为它们的结构和规律较为简单因此现代密码学引入了更加复杂的技术来保护信息单表代换和多表代换是两种常见的古典密码技术单表代换单表代换是一种基本的古典密码方法它将每个明文字符替换为固定的密文字符具体来说每个明文字符都被一个唯一的密文字符替代这种替代关系构成了代换表例如密码就是一种单表代换其中字母按照一个固定的位移进行替换多表代换多表代换是对单表代换的改进它引入了多个代换表来增加密码的复杂性具体来说使用不同的代换表对明文的不同部分进行代换从而使得同一个明文字符在不同位置可能被不同的密文字符替代例如密码就是一种多表代换密码其中密钥中的字母确定了用于加密每个明文字符的代换表对称加密在对称加密中同一个密钥被用于加密和解密数据发送方使用密钥对数据进行加密接收方使用相同的密钥对数据进行解密常见的对称加密算法包括高级加密标准和数据加密标准数据分块要加密的数据被分成位的数据块密钥生成和处理使用位的密钥经过一系列处理生成个位的子密钥网络结构采用网络结构将数据块分为左半部分和右半部分然后交替进行一系列处理轮加密进行轮的加密处理每轮包括以下步骤将右半部分扩展成位与子密钥进行异或将异或结果分成组每组位通过盒置换得到位输出将盒输出经过盒置换将盒输出与左半部分进行异或得到下一轮的右半部分左半部分保持不变最终置换经过轮处理后将左右两部分进行交换然后进行最终的置换得到加密后的位数据块非对称加密在非对称加密中使用一对密钥公钥和私钥发送方使用接收方的公钥加密数据只有接收方的私钥能够解密和椭圆曲线加密是常见的非对称加密算法生成密钥对首先通信双方生成一对密钥公钥和私钥公钥可以公开分享的密钥用于加密数据在非对称加密中公钥用于加密但无法用于解密加密数据私钥必须保持机密的密钥用于解密加密数据私钥能够解密由公钥加密的数据加密过程发送者使用接收者的公钥来加密要传输的数据发送者使用接收者的公钥将原始数据转换为加密数据加密后的数据只能使用与公钥配对的私钥来解密解密过程接收者使用其私钥来解密收到的加密数据接收者使用自己的私钥将加密数据转换为原始数据私钥保持机密只有接收者能够解密数据哈希函数哈希函数是一种单向函数它将输入数据转换成固定长度的哈希值哈希函数通常用于验证数据的完整性数字签名密码散列等常见的哈希函数包括等固定长度输出哈希函数的输出是固定长度的无论输入的数据有多长都会生成固定大小的哈希值输入映射哈希函数将不同长度的输入数据映射到哈希值空间的一个点这种映射是一种压缩将大量输入数据映射到有限的输出空间单向性好的哈希函数是单向的即从哈希值无法轻易反向计算出原始输入这种单向性保障了哈希值的机密性唯一性好的哈希函数应该保证不同的输入几乎不可能产生相同的哈希值避免哈希冲突家族常见的有包含数字大写字母包含数字大写字母特殊符号包含数字大写字母小写字母特殊符号等和都有但是没有小写编码原理是一种基于个可打印字符来表示二进制数据的表示方法将不可见字符可视化是其一大特点个可打印字符依次为可用二进制数映射这个字符对应编码见下表编码是一种字符编码标准它为世界上几乎所有的字符包括字母数字标点符号特殊符号等等分配了唯一的数值标识这些数值标识被称为码点编码采用不同的表示方式其中最常见的是十六进制表示法源文本编码编码是一种将特殊字符和非字符转换为特定格式的编码方式以便它们可以安全地在中传输和显示在编码中特殊字符被表示为后跟两位十六进制数表示字符的编码以下是一些常见字符的编码示例空格编码为问号编码为斜杠编码为百分号编码为加号编码为等号编码为字母编码为汉字中编码为栅栏密码栅栏密码是一种加密方法它的操作方式如下首先将要加密的明文分成个一组接着将每组的第一个字符组合在一起然后是每组的第二个字符依此类推直到每组的第个字符最后一组可能不足个字符最后将所有这些组合好的字符连接起来形成了密文这里使用栏栅栏加密为例说明这个过程明文去空格分组第一组第二组密文培根密码培根密码是一种替换密码每个明文字母被一个由字符组成的序列替换最初的加密方式就是由和组成序列替换明文所以你当然也可以用别的字母比如字母替换成以下是全部的对应关系另一种对于关系是每个字母都有唯一对应序列和与各自都有不同对应序列明文密文',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-01-22 21:22:10',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20210227105240_e3f66.jpeg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><div class="back-home-button"><i class="anzhiyufont anzhiyu-icon-grip-vertical"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="安知鱼博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="安知鱼博客"/><span class="back-menu-item-text">安知鱼博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div></div><a id="site-name" href="/" accesskey="h"><div class="title">亙壬的小站</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a><div id="he-plugin-simple"></div><script>var WIDGET = {
+  "CONFIG": {
+    "modules": "0124",
+    "background": "2",
+    "tmpColor": "FFFFFF",
+    "tmpSize": "16",
+    "cityColor": "FFFFFF",
+    "citySize": "16",
+    "aqiColor": "E8D87B",
+    "aqiSize": "16",
+    "weatherIconSize": "24",
+    "alertIconSize": "18",
+    "padding": "10px 10px 10px 10px",
+    "shadow": "0",
+    "language": "auto",
+    "borderRadius": "20",
+    "fixed": "true",
+    "vertical": "top",
+    "horizontal": "left",
+    "left": "20",
+    "top": "7.1",
+    "key": "df245676fb434a0691ead1c63341cd94"
+  }
+}
+</script><link rel="stylesheet" href="https://widget.qweather.net/simple/static/css/he-simple.css?v=1.4.0"/><script src="https://widget.qweather.net/simple/static/js/he-simple.js?v=1.4.0"></script></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 目录</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div></div><div id="nav-right"><div class="nav-button only-home" id="travellings_button" title="随机前往一个开往项目网站"><a class="site-page" onclick="anzhiyu.totraveling()" title="随机前往一个开往项目网站" href="javascript:void(0);" rel="external nofollow" data-pjax-state="external"><i class="anzhiyufont anzhiyu-icon-train"></i></a></div><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="随机前往一个文章" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="中控台" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190733.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190733.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190633.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190633.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">互动</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">兴趣点</div><span class="author-content-item-title">寻找你感兴趣的领域</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/GitHub/" style="font-size: 1.05rem;">GitHub<sup>4</sup></a><a href="/tags/Linux/" style="font-size: 1.05rem;">Linux<sup>3</sup></a><a href="/tags/centos/" style="font-size: 1.05rem;">centos<sup>2</sup></a><a href="/tags/java/" style="font-size: 1.05rem;">java<sup>1</sup></a><a href="/tags/python/" style="font-size: 1.05rem;">python<sup>2</sup></a><a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="font-size: 1.05rem;">环境配置<sup>2</sup></a><a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 1.05rem;">网络<sup>3</sup></a><a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 1.05rem;">语法<sup>1</sup></a><a href="/tags/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/" style="font-size: 1.05rem;">远程控制<sup>2</sup></a><a href="/tags/%E9%92%93%E9%B1%BC/" style="font-size: 1.05rem;">钓鱼<sup>2</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>文章</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/01/"><span class="card-archive-list-date">一月 2024</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">30</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/12/"><span class="card-archive-list-date">十二月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">31</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">9</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="显示模式切换" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="边栏显示控制"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="音乐开关"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="切换"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="article-meta tags"></span></div></div><h1 class="post-title" itemprop="name headline">32.3 密码学</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2023-12-31T16:00:00.000Z" title="发表于 2024-01-01 00:00:00">2024-01-01</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2024-01-22T13:22:10.028Z" title="更新于 2024-01-22 21:22:10">2024-01-22</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src="/img/default_cover.jpg"></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="http://example.com/2024/01/01/32-3%E5%AF%86%E7%A0%81%E5%AD%A6/"><header><h1 id="CrawlerTitle" itemprop="name headline">32.3 密码学</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">亙壬</span><time itemprop="dateCreated datePublished" datetime="2023-12-31T16:00:00.000Z" title="发表于 2024-01-01 00:00:00">2024-01-01</time><time itemprop="dateCreated datePublished" datetime="2024-01-22T13:22:10.028Z" title="更新于 2024-01-22 21:22:10">2024-01-22</time></header><h3 id="密码学"><a href="#密码学" class="headerlink" title="密码学"></a>密码学</h3><h3 id="密码学的基本概念"><a href="#密码学的基本概念" class="headerlink" title="密码学的基本概念"></a>密码学的基本概念</h3><p>密码学是关于信息保护和数据安全的学科，它涵盖了多个领域，包括加密、解密、数字签名、认证、密钥管理等。密码学的目标是确保信息在通信和存储过程中不会被未经授权的人获取、篡改或泄露。为实现这些目标，密码学引入了多种技术和算法，旨在构建安全的通信渠道和数据存储机制。<br>明文(Plaintext):未经加密的原始数据，通常是人类可读的形式。<br>密文( Ciphertext):经过加密的数据，通常是不可读或难以理解的形式。<br>加密算法(Encryption Algorithm):使用特定的方法和密钥将明文转换为密文的过程。<br>解密算法(Decryption Algorithm):使用相应的密钥将密文还原为明文的过程。<br>密钥(Key):在加密和解密过程中使用的值，密钥的安全性直接影响到加密系统的安全性。</p>
+<h3 id="密码学的目的"><a href="#密码学的目的" class="headerlink" title="密码学的目的"></a>密码学的目的</h3><p>密码设计者的根本目标是保障信息及信息系统的机密性(Confidentiality)完整性(Integrity)可用性( Availability)认证性(Authentication)不可否认性(Non-repudiation )<br>CIA 三要素是指信息安全领域的三个核心概念，分别是机密性(Confidentiality)、完整性(Integrity)和可用性(Availability)。这三个要素构成了信息安全的基础，确保了数据和系统的安全性和可信性。<br>机密性(Confidentiality):确保信息在传输和存储中不被未经授权的人访问。加密技术用于实现这一目标，只有授权用户才能解密并查看信息。<br>完整性( Integrity):确保信息在传输和存储中不被篡改。消息认证码(MAC)和哈希函数等技术用于验证数据的完整性。<br>可用性(Availability):确保系统和数据在需要时可以正常使用和访问，不受到故障、攻击或其他威胁的影响</p>
+<h3 id="密码学的分类"><a href="#密码学的分类" class="headerlink" title="密码学的分类"></a>密码学的分类</h3><p>古典密码学:指的是在计算机和现代密码学技术出现之前使用的传统加密方法，如凯撒密码、替代密码等。这些方法主要基于替换和重排字符来隐藏信息。<br>凯撒密码:凯撒密码是一种置换密码，由古罗马的凯撒大帝使用。它通过将字母向后移动固定的位置来加密文本。例如，如果将字母按字母表顺序向后移动3个位置，就可以将”HELLO”加密成”KHOOR”。<br>然而，古典密码很容易被破解，因为它们的结构和规律较为简单。因此，现代密码学引入了更加复杂的技术来保护信息。<br>单表代换和多表代换是两种常见的古典密码技术。<br>单表代换(Monoalphabetic Substitution):<br>单表代换是一种基本的古典密码方法，它将每个明文字符替换为固定的密文字符。具体来说，每个明文字符都被一个唯一的密文字符替代，这种替代关系构成了代换表。例如，Caesar密码就是一种单表代换，其中字母按照一个固定的位移进行替换。<br>多表代换(Polyalphabetic Substitution):<br>多表代换是对单表代换的改进，它引入了多个代换表来增加密码的复杂性。具体来说，使用不同的代换表对明文的不同部分进行代换，从而使得同一个明文字符在不同位置可能被不同的密文字符替代。<br>例如，Vigenère密码就是一种多表代换密码，其中密钥中的字母确定了用于加密每个明文字符的代换表。<br>对称加密:在对称加密中，同一个密钥被用于加密和解密数据。发送方使用密钥对数据进行加密，接<br>收方使用相同的密钥对数据进行解密。常见的对称加密算法包括AES(高级加密标准)和DES(数据加密标准)。<br>数据分块:要加密的数据被分成64位的数据块。<br>密钥生成和处理:使用56位的密钥，经过一系列处理生成16个48位的子密钥。<br>Feistel网络结构:DES采用Feistel网络结构，将数据块分为左半部分和右半部分，然后交替进行一系列处理。<br>16轮加密:进行16轮的加密处理，每轮包括以下步骤:<br>将右半部分扩展成48位，与子密钥进行异或。<br>将异或结果分成8组，每组6位，通过S盒置换得到4位输出。<br>将S盒输出经过P盒置换。<br>I将P盒输出与左半部分进行异或，得到下一轮的右半部分，左半部分保持不变。<br>最终置换:经过16轮处理后，将左右两部分进行交换，然后进行最终的置换，得到加密后的64位数据块。</p>
+<p>非对称加密:在非对称加密中，使用一对密钥:公钥和私钥。发送方使用接收方的公钥加密数据，只有接收方的私钥能够解密。RSA和ECC(椭圆曲线加密)是常见的非对称加密算法。<br>生成密钥对:首先，通信双方生成一对密钥:公钥和私钥。<br>公钥(Public Key):可以公开分享的密钥，用于加密数据。在非对称加密中，公钥用于加密，但无法用于解密加密数据。<br>私钥(Private Key):必须保持机密的密钥，用于解密加密数据。私钥能够解密由公钥加密的数据。<br>加密过程:发送者使用接收者的公钥来加密要传输的数据。<br>发送者使用接收者的公钥将原始数据转换为加密数据。<br>加密后的数据只能使用与公钥配对的私钥来解密。<br>解密过程:接收者使用其私钥来解密收到的加密数据。<br>接收者使用自己的私钥将加密数据转换为原始数据。<br>私钥保持机密，只有接收者能够解密数据。</p>
+<p>哈希函数:哈希函数是一种单向函数，它将输入数据转换成固定长度的哈希值。哈希函数通常用于验证数据的完整性，数字签名，密码散列等。常见的哈希函数包括SHA-256、MD5等。<br>固定长度输出:哈希函数的输出是固定长度的，无论输入的数据有多长，都会生成固定大小的哈希值。<br>输入映射:哈希函数将不同长度的输入数据映射到哈希值空间的一个点。这种映射是一种“压缩”，将大量输入数据映射到有限的输出空间。<br>单向性:好的哈希函数是单向的，即从哈希值无法轻易反向计算出原始输入。这种单向性保障了哈希值的机密性。<br>唯一性:好的哈希函数应该保证不同的输入几乎不可能产生相同的哈希值，避免哈希冲突。</p>
+<h3 id="Base家族"><a href="#Base家族" class="headerlink" title="Base家族"></a>Base家族</h3><p>常见的有base16、base32、base64、base58、base62、base85、base91、base92、base100</p>
+<ol>
+<li>base16 :包含数字0-9，大写字母A-F</li>
+<li>base32 :包含数字2-7，大写字母A-Z,特殊符号&#x3D;&#x3D;&#x3D;</li>
+<li>base64:包含数字0-9，大写字母A-Z，小写字母a-z，特殊符号+、&#x2F;、&#x3D;&#x3D;、&#x3D;等</li>
+<li>base32和base64都有&#x3D;，但是base32没有小写</li>
+</ol>
+<p>base64编码原理Base64是一种基于64个可打印字符来表示二进制数据的表示方法，将不可见字符可视化是其一大特点。64个可打印字符依次为A-Za-z0-9+&#x2F;，可用6bit二进制数映射这64个字符，对应编码见下表</p>
+<h3 id="Unicode编码"><a href="#Unicode编码" class="headerlink" title="Unicode编码"></a>Unicode编码</h3><p>Unicode 是一种字符编码标准，它为世界上几乎所有的字符(包括字母、数字、标点符号、特殊符<br>号等等)分配了唯一的数值标识。这些数值标识被称为Unicode码点。Unicode编码采用不同的表<br>示方式，其中最常见的是十六进制表示法。<br>源文本:The</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&amp;#x [Hex] : &amp;#x0054;&amp;#x0068;&amp;#x0065;</span><br><span class="line">&amp;#[Decimal] : &amp;#00084;&amp;#00104;&amp;#00101;</span><br><span class="line">\U [Hex] : \U0054\U0068\U0065</span><br><span class="line">\U+ [Hex] :\U+0054\U+0068\U+0065</span><br></pre></td></tr></table></figure>
+
+<h3 id="URL编码"><a href="#URL编码" class="headerlink" title="URL编码"></a>URL编码</h3><p>URL编码是一种将特殊字符和非ASCII字符转换为特定格式的编码方式，以便它们可以安全地在URL中传输和显示。在URL编码中，特殊字符被表示为”%”后跟两位十六进制数，表示字符的Unicode 编码。<br>以下是一些常见字符的URL编码示例:<br>空格:URL编码为%20。<br>问号:URL编码为%3F。<br>斜杠:URL编码为 %2F。<br>百分号:URL编码为 %25。<br>加号:URL编码为%2B。<br>等号:URL编码为 %3D。<br>字母”A”:URL编码为 %41。<br>汉字”中”:URL编码为%E4%B8%AD。</p>
+<h3 id="栅栏密码"><a href="#栅栏密码" class="headerlink" title="栅栏密码"></a>栅栏密码</h3><p>栅栏密码(Rail-fence Cipher)是一种加密方法，它的操作方式如下:首先，将要加密的明文分成N个一组。接着，将每组的第一个字符组合在一起，然后是每组的第二个字符，依此类推，直到每组的第N个字符(最后一组可能不足N个字符)。最后，将所有这些组合好的字符连接起来，形成了密文。这里使用2栏栅栏加密为例说明这个过程<br>明文:The quick brown fox jumps over the lazy dog<br>去空格:Thequickbrownfoxjumpsoverthelazydog<br>分组:Th eq ui ck br ow nf ox ju mp so ve rt he la zy do g<br>第一组:Teucbonojmsvrhlzdg<br>第二组:hqikrwfxupoeteayo<br>密文:Teucbonojmsvrhlzdghqikrwfxupoeteayq</p>
+<h3 id="培根密码"><a href="#培根密码" class="headerlink" title="培根密码"></a>培根密码</h3><p>培根密码(Baconian Cipher)是一种替换密码，每个明文字母被一个由5字符组成的序列替换，最初的加密方式就是由’A’和’B’组成序列替换明文(所以你当然也可以用别的字母)，比如字母’D’替换成”aaabb”，以下是全部的对应关系(另一种对于关系是每个字母都有唯一对应序列，l和J与U&#x2F;V各自都有不同对应序列):<br>#!shell A &#x3D; aaaaa I&#x2F;J&#x3D; abaaa R &#x3D; baaaa B &#x3D; aaaab K&#x3D;abaabS&#x3D; baaab C&#x3D; aaaba L&#x3D; ababa T&#x3D;baaba D &#x3D; aaabb M&#x3D;ababbU&#x2F;V&#x3D;baabbE&#x3D;aabaa N&#x3D;abbaaW&#x3D;babaa F &#x3D;aabab O&#x3D;abbabX &#x3D; babab G &#x3D;aabba P&#x3D;abbbaY&#x3D; babba H&#x3D; aabbb Q&#x3D;abbbbZ&#x3D;babbb<br>明文:THEFOX<br>密文:baaba aabbb aabaa aabab abbab babab<br><a target="_blank" rel="noopener" href="https://rumkin.com/tools/cipher/baconian/#">https://rumkin.com/tools/cipher/baconian/#</a></p>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/avatar.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/avatar.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">亙壬</div><div class="post-copyright__author_desc">邱章程</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="http://example.com/2024/01/01/32-3%E5%AF%86%E7%A0%81%E5%AD%A6/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('http://example.com/2024/01/01/32-3%E5%AF%86%E7%A0%81%E5%AD%A6/')">32.3 密码学</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="赞赏作者"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>打赏作者</div><div class="reward-main"><div class="reward-all"><span class="reward-title">感谢你赐予我前进的力量</span><ul class="reward-group"><li class="reward-item"><a href="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190733.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190733.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190633.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/20231201190633.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">赞赏者名单</div><div class="reward-dec">因为你们的支持让我意识到写文章的价值🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="http://example.com/2024/01/01/32-3%E5%AF%86%E7%A0%81%E5%AD%A6/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=32.3 密码学&amp;url=http://example.com/2024/01/01/32-3%E5%AF%86%E7%A0%81%E5%AD%A6/&amp;pic=/img/default_cover.jpg" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">亙壬的小站</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"></div></div></div><div class="post_share"><div class="social-share" data-image="/img/default_cover.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/01/01/33-%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2%E7%82%B9/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">33-信息泄露点</div></div></a></div><div class="next-post pull-right"><a href="/2024/01/01/32-1%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%BC%8F%E6%B4%9E/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info__sayhi" id="author-info__sayhi" onclick="anzhiyu.changeSayHelloText()"></div><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-status"><img class="g-status" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/08/24/64e6ce9c507bb.png" alt="status"/></div></div><div class="author-info__description"><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">这有关于<b style="color:#fff">产品、设计、开发</b>相关的问题和看法，还有<b style="color:#fff">文章翻译</b>和<b style="color:#fff">分享</b>。</div><div style="line-height:1.38;margin:0.6rem 0;text-align:justify;color:rgba(255, 255, 255, 0.8);">相信你可以在这里找到对你有用的<b style="color:#fff">知识</b>和<b style="color:#fff">教程</b>。</div></div><div class="author-info__bottom-group"><a class="author-info__bottom-group-left" href="/about"><h1 class="author-info__name">亙壬</h1><div class="author-info__desc">邱章程</div></a><div class="card-info-social-icons is-center"><a class="social-icon faa-parent animated-hover" href="https://github.com/dashboard" target="_blank" title="Github"><i class="anzhiyufont anzhiyu-icon-github"></i></a><a class="social-icon faa-parent animated-hover" href="https://space.bilibili.com/644240914/" target="_blank" title="BiliBili"><i class="anzhiyufont anzhiyu-icon-bilibili"></i></a></div></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bullhorn anzhiyu-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来看我的博客鸭~</div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/thumb1625855025341.jpg) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://raw.githubusercontent.com/qqzzcc/tuchuang/mian/img/1631726478133.jpg) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6"><span class="toc-number">1.</span> <span class="toc-text">密码学</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">2.</span> <span class="toc-text">密码学的基本概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E7%9B%AE%E7%9A%84"><span class="toc-number">3.</span> <span class="toc-text">密码学的目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%A6%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">4.</span> <span class="toc-text">密码学的分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Base%E5%AE%B6%E6%97%8F"><span class="toc-number">5.</span> <span class="toc-text">Base家族</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Unicode%E7%BC%96%E7%A0%81"><span class="toc-number">6.</span> <span class="toc-text">Unicode编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL%E7%BC%96%E7%A0%81"><span class="toc-number">7.</span> <span class="toc-text">URL编码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%85%E6%A0%8F%E5%AF%86%E7%A0%81"><span class="toc-number">8.</span> <span class="toc-text">栅栏密码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%B9%E6%A0%B9%E5%AF%86%E7%A0%81"><span class="toc-number">9.</span> <span class="toc-text">培根密码</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/01/24/36-%E9%9D%B6%E6%9C%BAeasy_cloudantivirus/" title="36.靶机easy_cloudantivirus"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="36.靶机easy_cloudantivirus"/></a><div class="content"><a class="title" href="/2024/01/24/36-%E9%9D%B6%E6%9C%BAeasy_cloudantivirus/" title="36.靶机easy_cloudantivirus">36.靶机easy_cloudantivirus</a><time datetime="2024-01-24T11:07:01.000Z" title="发表于 2024-01-24 19:07:01">2024-01-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/19/31-2%20xss%E7%9A%84beef%E5%B7%A5%E5%85%B7/" title="31.2 xss的beef工具"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="31.2 xss的beef工具"/></a><div class="content"><a class="title" href="/2024/01/19/31-2%20xss%E7%9A%84beef%E5%B7%A5%E5%85%B7/" title="31.2 xss的beef工具">31.2 xss的beef工具</a><time datetime="2024-01-19T02:38:43.000Z" title="发表于 2024-01-19 10:38:43">2024-01-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/14/30-web%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA/" title="web安全技术漏洞靶场"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="web安全技术漏洞靶场"/></a><div class="content"><a class="title" href="/2024/01/14/30-web%E5%AE%89%E5%85%A8%E6%8A%80%E6%9C%AF%E6%BC%8F%E6%B4%9E%E9%9D%B6%E5%9C%BA/" title="web安全技术漏洞靶场">web安全技术漏洞靶场</a><time datetime="2024-01-14T12:14:22.000Z" title="发表于 2024-01-14 20:14:22">2024-01-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/14/29-%E8%BD%BB%E9%87%8F%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="轻量云服务器"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="轻量云服务器"/></a><div class="content"><a class="title" href="/2024/01/14/29-%E8%BD%BB%E9%87%8F%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="轻量云服务器">轻量云服务器</a><time datetime="2024-01-14T11:47:15.000Z" title="发表于 2024-01-14 19:47:15">2024-01-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/01/10/26-%E9%9D%B6%E6%9C%BA/" title="靶机"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/default_cover.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="靶机"/></a><div class="content"><a class="title" href="/2024/01/10/26-%E9%9D%B6%E6%9C%BA/" title="靶机">靶机</a><time datetime="2024-01-10T11:16:47.000Z" title="发表于 2024-01-10 19:16:47">2024-01-10</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2024 By <a class="footer-bar-link" href="/" title="亙壬" target="_blank">亙壬</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">70</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">10</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">3</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://blog.anheyu.com/" title="安知鱼博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="安知鱼博客"/><span class="back-menu-item-text">安知鱼博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 文章</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/archives/"><i class="anzhiyufont anzhiyu-icon-box-archive faa-tada" style="font-size: 0.9em;"></i><span> 目录</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/categories/"><i class="anzhiyufont anzhiyu-icon-shapes faa-tada" style="font-size: 0.9em;"></i><span> 分类</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags faa-tada" style="font-size: 0.9em;"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 我的</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/music/"><i class="anzhiyufont anzhiyu-icon-music faa-tada" style="font-size: 0.9em;"></i><span> 音乐馆</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/album/"><i class="anzhiyufont anzhiyu-icon-images faa-tada" style="font-size: 0.9em;"></i><span> 相册集</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span> 关于</span></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/about/"><i class="anzhiyufont anzhiyu-icon-paper-plane faa-tada" style="font-size: 0.9em;"></i><span> 关于本人</span></a></li><li><a class="site-page child faa-parent animated-hover" href="javascript:toRandomPost()"><i class="anzhiyufont anzhiyu-icon-shoe-prints1 faa-tada" style="font-size: 0.9em;"></i><span> 随便逛逛</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/GitHub/" style="font-size: 0.88rem;">GitHub<sup>4</sup></a><a href="/tags/Linux/" style="font-size: 0.88rem;">Linux<sup>3</sup></a><a href="/tags/centos/" style="font-size: 0.88rem;">centos<sup>2</sup></a><a href="/tags/java/" style="font-size: 0.88rem;">java<sup>1</sup></a><a href="/tags/python/" style="font-size: 0.88rem;">python<sup>2</sup></a><a href="/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/" style="font-size: 0.88rem;">环境配置<sup>2</sup></a><a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 0.88rem;">网络<sup>3</sup></a><a href="/tags/%E8%AF%AD%E6%B3%95/" style="font-size: 0.88rem;">语法<sup>1</sup></a><a href="/tags/%E8%BF%9C%E7%A8%8B%E6%8E%A7%E5%88%B6/" style="font-size: 0.88rem;">远程控制<sup>2</sup></a><a href="/tags/%E9%92%93%E9%B1%BC/" style="font-size: 0.88rem;">钓鱼<sup>2</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@17.8.4/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
+        
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
+        
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.6.10",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
+
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 亙壬 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
+
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
+
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "visitor@anheyu.com";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/qrcodejs/1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><script defer="defer" id="fluttering_ribbon" mobile="true" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/canvas-fluttering-ribbon.min.js"></script><script id="click-heart" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="true"></script><script id="click-show-text" src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/dist/click-show-text.min.js" data-mobile="true" data-text="I,LOVE,YOU" data-fontsize="15px" data-random="true" async="async"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
